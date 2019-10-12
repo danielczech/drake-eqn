@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+h1{ text-align:center; color:#4AF02B;}
+
+    * {margin: 10; padding: 0;}
+    #maincontainer {text-align: center; height: 100%; width:100%; font-size: 20;}
+    .N, .Rstar, .M, .Fp, .Ne, .Fl, .Fi, .Fc, .L, .Done {display: inline-block; *display: inline; zoom: 1; vertical-align: top;}
+    .N{width: 9%; align-items: center;}
+    .Rstar {width: 9%; align-items: center;}
+    .Fp {width: 9%; align-items: center;}
+    .Ne {width: 9%; align-items: center;}
+    .Fl {width: 9%; align-items: center;}
+    .Fi {width: 9%; align-items: center;}
+    .Fc {width: 9%; align-items: center;}
+    .L {width: 9%; align-items: center;}
+    .Done {width: 9%; align-items: center;}
+
+    p{color:#4AF02B;}.nsize{font-size: 80px}.eqnsize{font-size: 40px;}.numsize{font-size: 20px;}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 100%;
+  border-radius: 5px;
+  background: #505050;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4AF02B;
+  cursor: pointer;
+}
+</style>
+
+</head>
+<h1> The Drake Equation </h1>
+<body bgcolor = "black">
+
+
+    <div id = "maincontainer">
+        
+        <div class ="N">
+           <p class="nsize"> N= </p>
+        </div>
+        
+         <div class = "Rstar" >
+           <p class="eqnsize"> R* </p>
+           <div class = "slidecontainer">
+             <input type="range" orient = "vertical" min="0" max="10" value="0" class="slider" id="RstarIn">
+           </div>
+           <p class = "numsize">  <span id="RstarVal"></span> </p>
+        </div>
+
+        <div class = "Fp">
+           <p class="eqnsize"> Fp </p>
+           <div class = "slidecontainer">
+             <input type="range" step="0.01" orient = "vertical" min="0" max="1" value="0" class="slider" id="FpIn">
+           </div>
+           <p class = "numsize">  <span id="FpVal"></span> </p>
+        </div>
+
+
+        <div class = "Ne">
+           <p class="eqnsize"> Ne </p>
+           <div class = "slidecontainer">
+              <input type="range" orient = "vertical" min="0" max="100" value="0" class="slider" id="NeIn">
+           </div>
+           <p class = "numsize">  <span id="NeVal"></span> </p>
+        </div>
+
+        <div class = "Fl">
+           <p class="eqnsize"> Fl </p>
+           <div class = "slidecontainer">
+              <input type="range" step = "0.01" orient = "vertical" min="0" max="1" value="0" class="slider" id="FlIn">
+           </div>
+           <p class = "numsize">  <span id="FlVal"></span> </p>
+        </div>
+
+        <div class = "Fi">
+           <p class="eqnsize"> Fi </p>
+           <div class = "slidecontainer">
+              <input type="range" step = "0.01" orient = "vertical" min="0" max="1" value="0" class="slider" id="FiIn">
+           </div>
+           <p class = "numsize">  <span id="FiVal"></span> </p>
+        </div>
+
+        <div class = "Fc">
+           <p class="eqnsize"> Fc </p>
+           <div class = "slidecontainer">
+              <input type="range" step = "0.01" orient = "vertical" min="0" max="1" value="0" class="slider" id="FcIn">
+           </div>
+           <p class = "numsize">  <span id="FcVal"></span> </p>
+        </div>
+
+        <div class = "L">
+           <p class="eqnsize"> L </p>
+           <div class = "slidecontainer">
+              <input type="range" step = "10000" orient = "vertical" min="0" max="100000000" value="0" class="slider" id="LIn">
+           </div>
+           <p class = "numsize">  <span id="LVal"></span> </p>
+        </div>
+
+
+        <div class = "Done">
+        <p>Done</p>
+        <p><span id = "Nval"></span></p>
+        </div>
+
+<script>
+
+function updateEqn(term, allTerms){
+    var slider = document.getElementById(term + "In");
+    var output = document.getElementById(term + "Val");
+    output.innerHTML = slider.value;
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+        calculateN(allTerms)
+    }
+}
+
+function calculateN(termNames){
+    var N = 1;
+    var i = 0;
+    for (i = 0; i < termNames.length; i++) {
+         N = N * document.getElementById(termNames[i] + "In").value;
+         }
+    output = document.getElementById("Nval")
+    output.innerHTML = N.toFixed(2)
+}
+
+var terms = ["Rstar", "Fp", "Ne", "Fl", "Fi", "Fc", "L"];
+var termVals = 
+
+var i = 0;
+for(i = 0; i < terms.length; i++){
+ 	updateEqn(terms[i], terms)
+}
+
+</script>
+
+</body>
+</html>
+

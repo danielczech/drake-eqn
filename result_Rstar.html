@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+h1{ font-family: "Arial Narrow", Arial, sans; text-align:center; color:#4AF02B;}
+h2{ font-family: "Arial Narrow", Arial, sans; text-align:center; color:#4AF02B;}
+
+    * {margin-top: 10; padding: 10;}
+    .maincontainer {height: 100%; width:100%; font-size: 20; margin-top: 5%;}
+    .textContainer, .sideContainer, .resultContainer {display: inline-block; *display: inline; zoom: 1; vertical-align: top;}
+    .textContainer{width: 60%; align-items: center;}
+    .sideContainer{width: 10%; align-items: center;}
+    .resultContainer{width: 10%; align-items: center;}
+
+    p{color:#4AF02B; margin:5px;}.termFont{text-align: center; font-family: "Times New Roman", Times, serif; font-size: 50px; font-weight: bold; font-style: italic;}.resultFont{text-align: center; margin-top: 10px; font-family: "Arial Narrow", Arial, sans; font-size: 20px; color: white;}.textFont{text-align: left; margin-top: 10px; margin-left: 20px; font-family: "Arial Narrow", Arial, sans; font-size: 20px;}
+
+</style>
+
+</head>
+<body bgcolor = "black">
+
+<h1>Your guesses: </h1>
+
+   <div class maincontainer>
+        <div class ="sideContainer" id = "Rstar">
+        </div>
+        <div class ="sideContainer">
+           <p class="termFont"> <i>R<sub>*</sub></i> </p>
+        </div>
+        <div class ="resultContainer">
+           <p class="resultFont"> You selected: </p>
+           <p class="resultFont"> <span id = "RstarResult"></span> </p>
+        </div>
+        <div class ="textContainer">
+           <p class="textFont"> Current estimates are 1.5 to 3 stars per year.</p>
+        </div>
+   </div>
+
+<div class maincontainer>
+        <div class ="sideContainer" id = "Fp">
+        </div>
+        <div class ="sideContainer">
+           <p class="termFont"> <i>f<sub>p</sub></i> </p>
+        </div>
+        <div class ="resultContainer">
+        	<p class="resultFont"> You selected: </p>
+           <p class="resultFont"><span id = "FpResult"></span></p>
+        </div>
+        <div class ="textContainer">
+           <p class="textFont"> It is now believed that nearly all stars have planets. Therefore, this value is believed to be close to 1.</p>
+        </div>
+   </div>
+
+<div class maincontainer>
+        <div class ="sideContainer" id = "Ne">
+        </div>
+        <div class ="sideContainer">
+           <p class="termFont"> <i>n<sub>e</sub></i> </p>
+        </div>
+        <div class ="resultContainer">
+        	<p class="resultFont"> You selected: </p>
+           <p class="resultFont"><span id = "NeResult"></span></p>
+        </div>
+        <div class ="textContainer">
+           <p class="textFont"> One recent estimate placed <i>n<sub>e</sub></i> near 0.4; another, 3 < <i>n<sub>e</sub></i> < 5.</p>
+        </div>
+   </div>
+
+
+<div class maincontainer>
+        <div class ="sideContainer" id = "Fl">
+        </div>
+        <div class ="sideContainer">
+           <p class="termFont"> <i>f<sub>l</sub></i> </p>
+        </div>
+        <div class ="resultContainer">
+        	<p class="resultFont"> You selected: </p>
+           <p class="resultFont"><span id = "FlResult"></span></p>
+       </div>
+         <div class = "textContainer">
+         <p class="textFont"> Life arose on Earth at around the same time as favourable conditions arose. If evidence of life were to be found on other bodies in the solar system, this might imply a value close to 1.</p>
+        </div>
+   </div>
+
+<div class maincontainer>
+        <div class ="sideContainer" id = "Fi">
+        </div>
+        <div class ="sideContainer">
+           <p class="termFont"> <i>f<sub>i</sub></i> </p>
+        </div>
+        <div class ="resultContainer">
+        	<p class="resultFont"> You selected: </p>
+           <p class="resultFont"><span id = "FiResult"></span></p>
+        </div>
+         <div class = "textContainer">
+         <p class="textFont"> A consensus has not been reached. Some advocate for a low value, arguing that so far, only one species on Earth is known to have reached a high level of intelligence. Others favour a high value. </p>
+        </div>
+   </div>
+
+<div class maincontainer>
+        <div class ="sideContainer" id = "Fc">
+        </div>
+        <div class ="sideContainer">
+           <p class="termFont"> <i>f<sub>c</sub></i> </p>
+        </div>
+        <div class ="resultContainer">
+        	<p class="resultFont"> You selected: </p>
+           <p class="resultFont"><span id = "FcResult"></span></p>
+        </div>
+        <div class = "textContainer">
+         <p class="textFont"> This value is also speculative. Given our current capabilities, we ourselves would be able to detect the ambient radio emissions of an Earth-like civilisation at distances of 10s**** of light years.</p>
+        </div>
+   </div>
+
+<div class maincontainer>
+        <div class ="sideContainer" id = "L">
+        </div>
+        <div class ="sideContainer">
+           <p class="termFont"> <i>L<sub></sub></i> </p>
+        </div>
+        <div class ="resultContainer">
+        	<p class="resultFont"> You selected: </p>
+           <p class="resultFont"><span id = "LResult"></span></p>
+        </div>
+        <div class = "textContainer">
+         <p class="textFont"> Some have argued that highly advanced civilisations may be able to overcome all threats to their survival, implying a large value. Others suggest a much lower value, considering the typical lifespan of civilisations on Earth.</p>
+        </div>
+   </div>
+
+<script>
+
+allTerms = JSON.parse(localStorage.getItem("allTerms"));
+allTerms.forEach(showValue);
+
+function showValue(term){
+termVal = JSON.parse(localStorage.getItem(term));
+termShow = document.getElementById(term + "Result");
+termShow.innerHTML = termVal;
+}
+
+
+</script>
+
+</body>
+</html>

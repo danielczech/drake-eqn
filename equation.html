@@ -4,7 +4,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
-
 h1{ font-family: "Arial Narrow", Arial, sans; text-align:center; color:#4AF02B;}
 h2{ font-family: "Arial Narrow", Arial, sans; text-align:center; color:#4AF02B;}
 
@@ -228,7 +227,7 @@ h2{ font-family: "Arial Narrow", Arial, sans; text-align:center; color:#4AF02B;}
 
           <div class = "sideContainer">
            <p class = "nsize"><span id="Nval"></span></p>
-        <button type="button" id = "submit">Submit!</button> 
+        <button type="button" onclick="submitTerms()" id = "submit">Submit!</button> 
           </div>
 
   <div id = "NInfo">
@@ -278,15 +277,8 @@ h2{ font-family: "Arial Narrow", Arial, sans; text-align:center; color:#4AF02B;}
       <b>L</b>: The length of time intelligent civilisations exhibit a detectable technosignature.
     </p>
   </div>
-
 </div>
 
-<!-- <div>
-  <p class = "tinysize">
-    Please send criticism to daniel.czech@protonmail.com
-  </p>
-</div>
- -->
 <script>
 
 function updateEqn(term, allTerms){
@@ -312,7 +304,6 @@ function updateEqn(term, allTerms){
     }
 }
 
-
 // function logScale(inputVal, lowVal, highVal){
 //   // We assume 0 <= inputVal <= 100
 //   var lowScale = Math.log(lowVal);
@@ -333,32 +324,23 @@ function calculateN(allTerms){
     output.innerHTML = N;
 }
 
-function getTerms(allTerms){
-   var submitButton = document.getElementById("submit");
-   submitButton.onclick = function(allTerms){
-       var userArr = [];
-       for (i = 0; i < allTerms.length; i++) {
-          termVal = document.getElementById(allTerms[i] + "In").value;
-          userArr[i] = termVal;
-          return userArr;
-          }
-    }
-}
-
-var terms = ["Rstar", "Fp", "Ne", "Fl", "Fi", "Fc", "L"];
+var allTerms = ["Rstar", "Fp", "Ne", "Fl", "Fi", "Fc", "L"];
+localStorage.setItem("allTerms", JSON.stringify(allTerms));
 
 var i = 0;
-for(i = 0; i < terms.length; i++){
- 	updateEqn(terms[i], terms)
+for(i = 0; i < allTerms.length; i++){
+ 	updateEqn(allTerms[i], allTerms);
 }
 
-var userArr = getTerms(terms)
-output = document.getElementById("Nval");
-output.innerHTML = userArr;
-
+function submitTerms(){
+       for (i = 0; i < allTerms.length; i++) {
+          termVal = document.getElementById(allTerms[i] + "In").value;
+          localStorage.setItem(allTerms[i], JSON.stringify(termVal))
+          }
+          window.location.href = "result_Rstar.html";
+}
 
 </script>
-
 </body>
 </html>
 

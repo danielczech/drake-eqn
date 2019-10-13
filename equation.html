@@ -14,7 +14,12 @@ h2{ font-family: "Arial Narrow", Arial, sans; text-align:center; color:#4AF02B;}
     .dot{width: 3%; align-items: center;}
     .sideContainer{width: 10%; align-items: center;}
 
-    p{color:#4AF02B; margin:0;}.numsize{font-family: "Arial Narrow", Arial, sans; margin-bottom: 30px; font-size: 30px;}.eqnsize{font-family: "Times New Roman", Times, serif; font-size: 50px; font-weight: bold; font-style: italic;}.nsize{font-family: "Arial Narrow", Arial, sans; font-size: 50px;}.tinysize{font-size: 12px;}
+    p{color:#4AF02B; margin:0;}
+    .numsize{font-family: "Arial Narrow", Arial, sans; margin-bottom: 30px; font-size: 30px;}
+    .eqnsize{font-family: "Times New Roman", Times, serif; font-size: 50px; font-weight: bold; font-style: italic;}
+    .nsize{font-family: "Arial Narrow", Arial, sans; font-size: 50px;}
+    .tinysize{font-size: 12px;}
+    .generalTerm{text-align: center; font-family: "Times New Roman", Times, serif; font-weight: bold; font-style: italic;}
 
 .slidecontainer {
   width: 100%; 
@@ -128,7 +133,7 @@ h2{ font-family: "Arial Narrow", Arial, sans; text-align:center; color:#4AF02B;}
 
 </head>
 <h2> The Drake Equation: </h2>
-<h1> Guess Your Own Values</h1>
+<h1> Choose Your Own Values</h1>
 <body bgcolor = "black">
 
     <div id = "maincontainer">
@@ -232,49 +237,49 @@ h2{ font-family: "Arial Narrow", Arial, sans; text-align:center; color:#4AF02B;}
 
   <div id = "NInfo">
     <p class = "numsize">
-      <b>N</b>: The number of civilisations in our galaxy with which communication might be possible.
+      <span class = "generalTerm">N</span>: The number of civilisations in our galaxy with which communication might be possible.
     </p>
   </div>
 
   <div id = "RstarInfo">
     <p class = "numsize">
-      <b>R<sub>*</sub></b>: The average rate of star formation in our galaxy.
+      <span class = "generalTerm">R<sub>*</sub></span>: The average rate of star formation in our galaxy.
     </p>
   </div>
 
   <div id = "FpInfo">
     <p class = "numsize">
-      <b>f<sub>p</sub></b>: The fraction of stars which have planets.
+      <span class = "generalTerm">f<sub>p</sub></span>: The fraction of stars which have planets.
     </p>
   </div>
 
   <div id = "NeInfo">
     <p class = "numsize">
-      <b>n<sub>e</sub></b>: The fraction of planets that could potentially support life.
+      <span class = "generalTerm">n<sub>e</sub></span>: The fraction of planets that could potentially support life.
     </p>
   </div>
 
   <div id = "FlInfo">
     <p class = "numsize">
-      <b>f<sub>l</sub></b>: The fraction of potentially life-supporting planets on which life does arise.
+      <span class = "generalTerm">f<sub>l</sub></span>: The fraction of potentially life-supporting planets on which life does arise.
     </p>
   </div>
 
   <div id = "FiInfo">
     <p class = "numsize">
-      <b>f<sub>i</sub></b>: The fraction of planets with life on which intelligent life arises.
+      <span class = "generalTerm">f<sub>i</sub></span>: The fraction of planets with life on which intelligent life arises.
     </p>
   </div>
 
   <div id = "FcInfo">
     <p class = "numsize">
-      <b>f<sub>c</sub></b>: The fraction of civilisations which exhibit a detectable technosignature.
+      <span class = "generalTerm">f<sub>c</sub></span>: The fraction of civilisations which exhibit a detectable technosignature.
     </p>
   </div>
 
   <div id = "LInfo">
     <p class = "numsize">
-      <b>L</b>: The length of time intelligent civilisations exhibit a detectable technosignature.
+      <span class = "generalTerm">L</span>: The length of time intelligent civilisations exhibit a detectable technosignature.
     </p>
   </div>
 </div>
@@ -319,6 +324,7 @@ function calculateN(allTerms){
          termVal = document.getElementById(allTerms[i] + "In").value;
          N = N * termVal;
          }
+    localStorage.setItem("N", N)
     N = N.toExponential(3);
     output = document.getElementById("Nval");
     output.innerHTML = N;
@@ -335,7 +341,7 @@ for(i = 0; i < allTerms.length; i++){
 function submitTerms(){
        for (i = 0; i < allTerms.length; i++) {
           termVal = document.getElementById(allTerms[i] + "In").value;
-          localStorage.setItem(allTerms[i], JSON.stringify(termVal))
+          localStorage.setItem(allTerms[i] + "Val", JSON.stringify(termVal))
           }
           window.location.href = "result_Rstar.html";
 }

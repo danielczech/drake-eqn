@@ -8,16 +8,18 @@ h1{ text-align:center; color:#4AF02B;}
 h2{ text-align:center; color:#4AF02B;}
 
     * {margin: 10; padding: 0;}
-    #maincontainer {text-align: center; height: 100%; width:100%; font-size: 20;}
-    .sideContainer, .term, .dot {display: inline-block; *display: inline; zoom: 1; vertical-align: top;}
-    .term{width: 7%; align-items: center;}
+    #maincontainer {text-align: center; height: 100%; width:100%; font-size: 20; margin-top: 5%;}
+    .term, .dot, .sideContainer {display: inline-block; *display: inline; zoom: 1; vertical-align: top;}
+    .term{width: 5%; align-items: center;}
     .dot{width: 2%; align-items: center;}
-    .sideContainer{width: 12%; align-items: center;}
+    .sideContainer{width: 10%; align-items: center;}
 
-    p{color:#4AF02B;}.nsize{font-size: 60px; font-weight: bold;}.eqnsize{font-size: 40px; font-weight: bold;}.numsize{font-size: 30px;}
+    p{color:#4AF02B; margin:0;}.nsize{font-size: 50px; font-weight: bold;}.eqnsize{font-size: 50px; font-weight: bold;}.numsize{margin-bottom: 30px; font-size: 30px;}.tinysize{font-size: 12px;}
 
 .slidecontainer {
   width: 100%; 
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .slider {
@@ -43,6 +45,27 @@ h2{ text-align:center; color:#4AF02B;}
   border-radius: 50%;
   background: #4AF02B;
   cursor: pointer;
+}
+
+#submit {
+ margin-top: 0px;
+ margin-bottom: 20px;
+ background-color: black;
+ padding: .5em;
+ -moz-border-radius: 15px;
+ -webkit-border-radius: 5px;
+ border-radius: 15px;
+ color: #4AF02B;
+ font-family: 'Oswald';
+ font-size: 20px;
+ text-decoration: none;
+ border-color: #4AF02B;
+ border-style: solid;
+ border-width: medium;
+}
+
+#submit:hover {
+ background-color: #40970e;
 }
 
 #RstarInfo{
@@ -108,14 +131,17 @@ h2{ text-align:center; color:#4AF02B;}
 <h1> Guess Your Own Values</h1>
 <body bgcolor = "black">
 
+
+
+
     <div id = "maincontainer">
         
-        <div class ="term" id = "N">
-           <p class="nsize"> N </p>
+        <div class ="sideContainer" id = "N">
+           <p class="eqnsize"> N </p>
         </div>
 
         <div class ="term">
-           <p class="nsize"> = </p>
+           <p class="eqnsize"> = </p>
         </div>
 
          <div id = "Rstar" class = "term">
@@ -191,7 +217,7 @@ h2{ text-align:center; color:#4AF02B;}
         </div>
 
         <div class = "term" id = "L">
-           <p class="eqnsize"> L </p>
+           <p class="eqnsize"> L<sub> </sub> </p>
            <div class = "slidecontainer">
               <input type="range" step = "10000" orient = "vertical" min="0" max="100000000" value="0" class="slider" id="LIn">
            </div>
@@ -199,11 +225,13 @@ h2{ text-align:center; color:#4AF02B;}
         </div>
 
           <div class = "term">
-           <p class = "nsize"> = </p>
+           <p class = "eqnsize"> = </p>
           </div>
 
           <div class = "sideContainer">
-           <p class = "nsize"> <span id="Nval" class = "eqnsize"></span></p>
+           <p class = "eqnsize"><span id="Nval"></span></p>
+        <button type="button" id = "submit">Submit!</button> 
+
           </div>
 
   <div id = "NInfo">
@@ -254,19 +282,37 @@ h2{ text-align:center; color:#4AF02B;}
     </p>
   </div>
 
+<!-- <div>
+  <p class = "tinysize">
+    Please send criticism to daniel.czech@protonmail.com
+  </p>
+</div>
+ -->
 <script>
 
 function updateEqn(term, allTerms){
     var slider = document.getElementById(term + "In");
     var output = document.getElementById(term + "Val");
     output.innerHTML = slider.value;
+    if(term == "L"){
+        output.innerHTML = Number(slider.value).toExponential(2);  
+        }
+    else{
+        output.innerHTML = slider.value;
+        }
     calculateN(allTerms);
     slider.oninput = function() {
-        output.innerHTML = this.value;
+        if(term == "L"){
+        output.innerHTML = Number(this.value).toExponential(2);  
+        }
+        else{
+          output.innerHTML = this.value;
+        }
         calculateN(allTerms);
         termInfo("Rstar")
     }
 }
+
 
 // function logScale(inputVal, lowVal, highVal){
 //   // We assume 0 <= inputVal <= 100

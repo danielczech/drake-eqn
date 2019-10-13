@@ -4,17 +4,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
-h1{ text-align:center; color:#4AF02B;}
-h2{ text-align:center; color:#4AF02B;}
 
-    * {margin: 10; padding: 0;}
+h1{ font-family: "Arial Narrow", Arial, sans; text-align:center; color:#4AF02B;}
+h2{ font-family: "Arial Narrow", Arial, sans; text-align:center; color:#4AF02B;}
+
+    * {margin-top: 10; padding: 0;}
     #maincontainer {text-align: center; height: 100%; width:100%; font-size: 20; margin-top: 5%;}
     .term, .dot, .sideContainer {display: inline-block; *display: inline; zoom: 1; vertical-align: top;}
     .term{width: 5%; align-items: center;}
-    .dot{width: 2%; align-items: center;}
+    .dot{width: 3%; align-items: center;}
     .sideContainer{width: 10%; align-items: center;}
 
-    p{color:#4AF02B; margin:0;}.nsize{font-size: 50px; font-weight: bold;}.eqnsize{font-size: 50px; font-weight: bold;}.numsize{margin-bottom: 30px; font-size: 30px;}.tinysize{font-size: 12px;}
+    p{color:#4AF02B; margin:0;}.numsize{font-family: "Arial Narrow", Arial, sans; margin-bottom: 30px; font-size: 30px;}.eqnsize{font-family: "Times New Roman", Times, serif; font-size: 50px; font-weight: bold; font-style: italic;}.nsize{font-family: "Arial Narrow", Arial, sans; font-size: 50px;}.tinysize{font-size: 12px;}
 
 .slidecontainer {
   width: 100%; 
@@ -48,15 +49,15 @@ h2{ text-align:center; color:#4AF02B;}
 }
 
 #submit {
- margin-top: 0px;
+ font-family: "Arial", Arial, sans;
+ margin-top: 10px;
  margin-bottom: 20px;
  background-color: black;
- padding: .5em;
+ padding: .8em;
  -moz-border-radius: 15px;
  -webkit-border-radius: 5px;
  border-radius: 15px;
  color: #4AF02B;
- font-family: 'Oswald';
  font-size: 20px;
  text-decoration: none;
  border-color: #4AF02B;
@@ -130,9 +131,6 @@ h2{ text-align:center; color:#4AF02B;}
 <h2> The Drake Equation: </h2>
 <h1> Guess Your Own Values</h1>
 <body bgcolor = "black">
-
-
-
 
     <div id = "maincontainer">
         
@@ -229,9 +227,8 @@ h2{ text-align:center; color:#4AF02B;}
           </div>
 
           <div class = "sideContainer">
-           <p class = "eqnsize"><span id="Nval"></span></p>
+           <p class = "nsize"><span id="Nval"></span></p>
         <button type="button" id = "submit">Submit!</button> 
-
           </div>
 
   <div id = "NInfo">
@@ -281,6 +278,8 @@ h2{ text-align:center; color:#4AF02B;}
       <b>L</b>: The length of time intelligent civilisations exhibit a detectable technosignature.
     </p>
   </div>
+
+</div>
 
 <!-- <div>
   <p class = "tinysize">

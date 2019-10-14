@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+
+    #RstarInfo{
+      display: none;
+    }
+    #Rstar:hover ~#RstarInfo {
+      display: block;
+    }
+
+    #NInfo{
+      display: none;
+    }
+    #N:hover ~#NInfo {
+      display: block;
+    }
+
+    #FpInfo{
+      display: none;
+    }
+    #Fp:hover ~#FpInfo {
+      display: block;
+    }
+
+    #NeInfo{
+      display: none;
+    }
+    #Ne:hover ~#NeInfo {
+      display: block;
+    }
+
+    #FlInfo{
+      display: none;
+    }
+    #Fl:hover ~#FlInfo {
+      display: block;
+    }
+
+    #FiInfo{
+      display: none;
+    }
+    #Fi:hover ~#FiInfo {
+      display: block;
+    }
+
+    #FcInfo{
+      display: none;
+    }
+    #Fc:hover ~#FcInfo {
+      display: block;
+    }
+
+    #LInfo{
+      display: none;
+    }
+    #L:hover ~#LInfo {
+      display: block;
+    }
+  </style>
+
+</head>
+
+<h2> The Drake Equation: </h2>
+<h1> Choose Your Own Values</h1>
+
+<body bgcolor = "black">
+
+  <div id = "mainContainer">
+    <div class ="sideContainer" id = "N">
+     <p class="largeTerm"> N </p>
+   </div>
+
+   <div class ="term">
+     <p class="largeTerm"> = </p>
+   </div>
+
+   <div id = "Rstar" class = "term">
+     <p class="largeTerm"> R<sub>*</sub></p>
+     <div class = "slideContainer">
+       <input type="range" orient = "vertical" min="0" max="10" value="0" class="slider" id="RstarIn">
+     </div>
+     <p class = "smallNum">  <span id="RstarVal"></span> </p>
+   </div>
+
+   <div class = "dot">
+    <p class = "largeTerm"> · </p>
+  </div>
+
+  <div class = "term" id = "Fp">
+   <p class="largeTerm"> f<sub>p</sub> </p>
+   <div class = "slideContainer">
+     <input type="range" step="0.01" orient = "vertical" min="0" max="1" value="0" class="slider" id="FpIn">
+   </div>
+   <p class = "smallNum">  <span id="FpVal"></span> </p>
+ </div>
+
+ <div class = "dot">
+  <p class = "largeTerm"> · </p>
+</div>
+
+<div class = "term" id = "Ne">
+ <p class="largeTerm"> n<sub>e</sub> </p>
+ <div class = "slideContainer">
+  <input type="range" orient = "vertical" min="0" max="100" value="0" class="slider" id="NeIn">
+</div>
+<p class = "smallNum">  <span id="NeVal"></span> </p>
+</div>
+
+<div class = "dot">
+  <p class = "largeTerm"> · </p>
+</div>
+
+<div class = "term" id = "Fl">
+ <p class="largeTerm"> f<sub>l</sub> </p>
+ <div class = "slideContainer">
+  <input type="range" step = "0.01" orient = "vertical" min="0" max="1" value="0" class="slider" id="FlIn">
+</div>
+<p class = "smallNum">  <span id="FlVal"></span> </p>
+</div>
+
+<div class = "dot">
+  <p class = "largeTerm"> · </p>
+</div>
+
+<div class = "term" id = "Fi">
+ <p class="largeTerm"> f<sub>i</sub> </p>
+ <div class = "slideContainer">
+  <input type="range" step = "0.01" orient = "vertical" min="0" max="1" value="0" class="slider" id="FiIn">
+</div>
+<p class = "smallNum">  <span id="FiVal"></span> </p>
+</div>
+
+<div class = "dot">
+  <p class = "largeTerm"> · </p>
+</div>
+
+<div class = "term" id = "Fc">
+ <p class="largeTerm"> f<sub>c</sub> </p>
+ <div class = "slideContainer">
+  <input type="range" step = "0.01" orient = "vertical" min="0" max="1" value="0" class="slider" id="FcIn">
+</div>
+<p class = "smallNum">  <span id="FcVal"></span> </p>
+</div>
+
+<div class = "dot">
+  <p class = "largeTerm"> · </p>
+</div>
+
+<div class = "term" id = "L">
+ <p class="largeTerm"> L<sub> </sub> </p>
+ <div class = "slideContainer">
+  <input type="range" step = "10000" orient = "vertical" min="0" max="100000000" value="0" class="slider" id="LIn">
+</div>
+<p class = "smallNum">  <span id="LVal"></span> </p>
+</div>
+
+<div class = "term">
+ <p class = "largeTerm"> = </p>
+</div>
+
+<div class = "sideContainer">
+ <p class = "largeNum"><span id="Nval"></span></p>
+ <button type="button" onclick="submitTerms()" id = "submit">Submit!</button> 
+</div>
+
+<div id = "NInfo">
+  <p class = "smallNum">
+    <span class = "generalTerm">N</span>: The number of civilisations in our galaxy with which communication might be possible.
+  </p>
+</div>
+
+<div id = "RstarInfo">
+  <p class = "smallNum">
+    <span class = "generalTerm">R<sub>*</sub></span>: The average rate of star formation in our galaxy.
+  </p>
+</div>
+
+<div id = "FpInfo">
+  <p class = "smallNum">
+    <span class = "generalTerm">f<sub>p</sub></span>: The fraction of stars which have planets.
+  </p>
+</div>
+
+<div id = "NeInfo">
+  <p class = "smallNum">
+    <span class = "generalTerm">n<sub>e</sub></span>: The fraction of planets that could potentially support life.
+  </p>
+</div>
+
+<div id = "FlInfo">
+  <p class = "smallNum">
+    <span class = "generalTerm">f<sub>l</sub></span>: The fraction of potentially life-supporting planets on which life does arise.
+  </p>
+</div>
+
+<div id = "FiInfo">
+  <p class = "smallNum">
+    <span class = "generalTerm">f<sub>i</sub></span>: The fraction of planets with life on which intelligent life arises.
+  </p>
+</div>
+
+<div id = "FcInfo">
+  <p class = "smallNum">
+    <span class = "generalTerm">f<sub>c</sub></span>: The fraction of civilisations which exhibit a detectable technosignature.
+  </p>
+</div>
+
+<div id = "LInfo">
+  <p class = "smallNum">
+    <span class = "generalTerm">L</span>: The length of time intelligent civilisations exhibit a detectable technosignature.
+  </p>
+</div>
+</div>
+
+<script>
+
+  function updateEqn(term, allTerms){
+    var slider = document.getElementById(term + "In");
+    var output = document.getElementById(term + "Val");
+    output.innerHTML = slider.value;
+    if(term == "L"){
+      output.innerHTML = Number(slider.value).toExponential(2);  
+    }
+    else{
+      output.innerHTML = slider.value;
+    }
+    calculateN(allTerms);
+    slider.oninput = function() {
+      if(term == "L"){
+        output.innerHTML = Number(this.value).toExponential(2);  
+      }
+      else{
+        output.innerHTML = this.value;
+      }
+      calculateN(allTerms);
+      termInfo("Rstar")
+    }
+  }
+
+// function logScale(inputVal, lowVal, highVal){
+//   // We assume 0 <= inputVal <= 100
+//   var lowScale = Math.log(lowVal);
+//   var highScale = Math.log(highVal);
+//   var scaleRange = (highScale - lowscale)/100.0 
+//   return Math.exp(inputVal*scaleRange)
+// }
+
+function calculateN(allTerms){
+  var N = 1;
+  var i = 0;
+  for (i = 0; i < allTerms.length; i++) {
+   termVal = document.getElementById(allTerms[i] + "In").value;
+   N = N * termVal;
+ }
+ localStorage.setItem("N", N)
+ N = N.toExponential(3);
+ output = document.getElementById("Nval");
+ output.innerHTML = N;
+}
+
+function submitTerms(){
+ for (i = 0; i < allTerms.length; i++) {
+  termVal = document.getElementById(allTerms[i] + "In").value;
+  localStorage.setItem(allTerms[i] + "Val", JSON.stringify(termVal))
+}
+window.location.href = "result.html";
+}
+
+var allTerms = ["Rstar", "Fp", "Ne", "Fl", "Fi", "Fc", "L"];
+localStorage.setItem("allTerms", JSON.stringify(allTerms));
+
+var i = 0;
+for(i = 0; i < allTerms.length; i++){
+  updateEqn(allTerms[i], allTerms);
+}
+
+</script>
+</body>
+</html>
+

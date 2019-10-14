@@ -1,0 +1,75 @@
+h1{ font-family: "Arial Narrow", Arial, sans; text-align:center; color:white;}
+h2{ font-family: "Arial Narrow", Arial, sans; text-align:center; color:white;}
+
+/* Special green colour for IAC: #4AF02B; background green: #40970e */
+
+* {margin-top: 10; padding: 0;}
+#mainContainer {text-align: center; height: 100%; width:100%; font-size: 20; margin-top: 5%;}
+.term, .dot, .sideContainer, .textContainer, .resultContainer {display: inline-block; *display: inline; zoom: 1; vertical-align: top;}
+.term{width: 5%; align-items: center;}
+.dot{width: 3%; align-items: center;}
+.sideContainer{width: 10%; align-items: center;}
+.resultContainer{width: 10%; align-items: center;}
+.textContainer{width: 60%; align-items: center;}
+
+p{color:white; margin:0;}
+.largeTerm{font-family: "Times New Roman", Times, serif; font-size: 50px; font-weight: bold; font-style: italic;}
+.generalTerm{text-align: center; font-family: "Times New Roman", Times, serif; font-weight: bold; font-style: italic;}
+.largeNum{font-family: "Arial Narrow", Arial, sans; font-size: 50px;}
+.smallNum{font-family: "Arial Narrow", Arial, sans; margin-bottom: 30px; font-size: 30px;}
+.resultFont{text-align: center; margin-top: 10px; font-family: "Arial Narrow", Arial, sans; font-size: 20px; color: white;}
+.selectFont{text-align: center; margin-top: 10px; font-family: "Arial Narrow", Arial, sans; font-size: 20px;}
+.textFont{text-align: left; margin-top: 10px; margin-left: 20px; font-family: "Arial Narrow", Arial, sans; font-size: 20px;}
+
+span{}.lhFont{}
+
+.slideContainer {
+	width: 100%; 
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.slider {
+	-webkit-appearance: none;
+	width: 10px;
+	height: 150px;
+	border-radius: 5px;
+	background: #505050;
+	outline: none;
+	opacity: 0.5;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+}
+
+.slider:hover {
+	opacity: 1;
+}
+
+.slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: white;
+	cursor: pointer;
+}
+
+#submit {
+	font-family: "Arial", Arial, sans;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	background-color: black;
+	padding: .8em;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 5px;
+	border-radius: 15px;
+	color: white;
+	font-size: 20px;
+	text-decoration: none;
+	border-color: white;
+	border-style: solid;
+	border-width: medium;
+}
+
+#submit:hover {
+	background-color: #505050;
+}

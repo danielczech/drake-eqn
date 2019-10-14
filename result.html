@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body bgcolor = "black">
+  <h1>Your selection predicts <span class = "generalTerm">N = </span><span id = "NCivs"></span> civilisations</h1>
+
+  <div class maincontainer>
+    <div class ="sideContainer" id = "Rstar">
+    </div>
+    <div class ="sideContainer">
+     <p class="largeTerm"> <i>R<sub>*</sub></i> </p>
+   </div>
+   <div class ="resultContainer">
+     <p class="selectFont"> You selected: </p>
+     <p class="resultFont"> <span id = "RstarResult"></span> </p>
+   </div>
+   <div class ="textContainer">
+     <p class="textFont"> Current estimates are 1.5 to 3 stars per year. You might be considered
+      <span class = "lhFont" id = "RstarLikelihood"></span>
+    </p>
+  </div>
+</div>
+
+<div class maincontainer>
+  <div class ="sideContainer" id = "Fp">
+  </div>
+  <div class ="sideContainer">
+   <p class="largeTerm"> <i>f<sub>p</sub></i> </p>
+ </div>
+ <div class ="resultContainer">
+   <p class="selectFont"> You selected: </p>
+   <p class="resultFont"><span id = "FpResult"></span></p>
+ </div>
+ <div class ="textContainer">
+   <p class="textFont"> It is now believed that nearly all stars have planets. Therefore, this value is believed to be close to 1. You might be considered
+    <span class = "lhFont" id = "FpLikelihood"></span>
+  </p>
+</div>
+</div>
+
+<div class maincontainer>
+  <div class ="sideContainer" id = "Ne">
+  </div>
+  <div class ="sideContainer">
+   <p class="largeTerm"> <i>n<sub>e</sub></i> </p>
+ </div>
+ <div class ="resultContainer">
+   <p class="selectFont"> You selected: </p>
+   <p class="resultFont"><span id = "NeResult"></span></p>
+ </div>
+ <div class ="textContainer">
+   <p class="textFont"> One recent estimate placed <span class = "generalTerm">n<sub>e</sub></span> near 0.4; another, 3 < <span class = "generalTerm">n<sub>e</sub></span> < 5. You might be considered 
+    <span class = "lhFont" id = "NeLikelihood"></span>
+  </p>
+</div>
+</div>
+
+<div class maincontainer>
+  <div class ="sideContainer" id = "Fl">
+  </div>
+  <div class ="sideContainer">
+   <p class="largeTerm"> <i>f<sub>l</sub></i> </p>
+ </div>
+ <div class ="resultContainer">
+   <p class="selectFont"> You selected: </p>
+   <p class="resultFont"><span id = "FlResult"></span></p>
+ </div>
+ <div class = "textContainer">
+   <p class="textFont"> Life arose on Earth at around the same time as favourable conditions arose. If evidence of life were to be found on other bodies in the solar system, this might imply a value close to 1. You might be considered
+     <span class = "lhFont" id = "FlLikelihood"></span>
+   </p>
+ </div>
+</div>
+
+<div class maincontainer>
+  <div class ="sideContainer" id = "Fi">
+  </div>
+  <div class ="sideContainer">
+   <p class="largeTerm"> <i>f<sub>i</sub></i> </p>
+ </div>
+ <div class ="resultContainer">
+   <p class="selectFont"> You selected: </p>
+   <p class="resultFont"><span id = "FiResult"></span></p>
+ </div>
+ <div class = "textContainer">
+   <p class="textFont"> A consensus has not been reached. Some advocate for a low value, arguing that so far, only one species on Earth is known to have reached a high level of intelligence. Others favour a high value. You might be considered  
+     <span class = "lhFont" id = "FiLikelihood"></span>
+   </p>
+ </div>
+</div>
+
+<div class maincontainer>
+  <div class ="sideContainer" id = "Fc">
+  </div>
+  <div class ="sideContainer">
+   <p class="largeTerm"> <i>f<sub>c</sub></i> </p>
+ </div>
+ <div class ="resultContainer">
+   <p class="selectFont"> You selected: </p>
+   <p class="resultFont"><span id = "FcResult"></span></p>
+ </div>
+ <div class = "textContainer">
+   <p class="textFont"> This value is also speculative. Given our current capabilities, we ourselves would be able to detect the ambient radio emissions of an Earth-like civilisation at distances of 10s [Is this correct?] of light years. You might be considered
+     <span class = "lhFont" id = "FcLikelihood"></span>
+   </p>
+ </div>
+</div>
+
+<div class maincontainer>
+  <div class ="sideContainer" id = "L">
+  </div>
+  <div class ="sideContainer">
+   <p class="largeTerm"> <i>L<sub></sub></i> </p>
+ </div>
+ <div class ="resultContainer">
+   <p class="selectFont"> You selected: </p>
+   <p class="resultFont"><span id = "LResult"></span></p>
+ </div>
+ <div class = "textContainer">
+   <p class="textFont"> Some have argued that highly advanced civilisations may be able to overcome all threats to their survival, implying a large value. Others suggest a much lower value, considering the typical lifespan of civilisations on Earth. You might be considered 
+     <span class = "lhFont" id = "LLikelihood"></span></p>
+   </div>
+ </div>
+
+ <script>
+
+  function showValue(term){
+    termVal = JSON.parse(localStorage.getItem(term + "Val"));
+    termShow = document.getElementById(term + "Result");
+    termShow.innerHTML = termVal;
+  }
+
+  function showLikelihood(term, minVal, maxVal){
+    termVal = JSON.parse(localStorage.getItem(term + "Val"));
+    termLikelihood = document.getElementById(term + "Likelihood");
+    termLikelihood.innerHTML = checkLikelihood(Number(termVal), minVal, maxVal);
+  }
+
+  function checkLikelihood(userVal, min, max){
+    var output = "neutral.".fontcolor("#6AD1E3");
+    if(userVal < min){
+      output = "doubtful.".fontcolor("#F44934");
+    }
+    else if(userVal > max){
+      output = "optimistic.".fontcolor("#4AF02B");
+    } 
+    return output;
+  }
+
+  N = JSON.parse(localStorage.getItem("N")).toFixed(0);
+  NShow = document.getElementById("NCivs");
+  NShow.innerHTML = N;
+
+  allTerms = JSON.parse(localStorage.getItem("allTerms"));
+  allTerms.forEach(showValue);
+
+  var min = [1.5, 0.7, 3, 0.5, 0.5, 304];
+  var max = [3, 0.7, 5, 0.5, 0.5, 1000000];
+  var i = 0;
+  for(i = 0; i < allTerms.length; i++){
+    showLikelihood(allTerms[i], min[i], max[i]);
+  }
+
+</script>
+</body>
+</html>

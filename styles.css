@@ -24,16 +24,18 @@ p{color:white; margin:0;}
 span{}.lhFont{}
 
 .slideContainer {
-	width: 100%; 
-	margin-top: 30px;
-	margin-bottom: 30px;
+    transform: rotate(270deg);
+	text-align: center;
+    margin-top: 200px;
+    margin-bottom: 60px;
 }
 
 .slider {
+    align-items: center;
 	-webkit-appearance: none;
-	width: 10px;
-	height: 150px;
-	border-radius: 5px;
+	width: 200px;
+	height: 10px;
+	border-radius: 8px;
 	background: #505050;
 	outline: none;
 	opacity: 0.5;
@@ -46,6 +48,15 @@ span{}.lhFont{}
 }
 
 .slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: white;
+	cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
 	width: 25px;
 	height: 25px;
 	border-radius: 50%;

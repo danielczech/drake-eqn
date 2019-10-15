@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
   <style>
@@ -81,7 +82,7 @@
    <div id = "Rstar" class = "term">
      <p class="largeTerm"> R<sub>*</sub></p>
      <div class = "slideContainer">
-       <input type="range" orient = "vertical" min="0" max="10" value="0" class="slider" id="RstarIn">
+       <input type="range" min="0" max="10" value="0" class="slider" id="RstarIn">
      </div>
      <p class = "smallNum">  <span id="RstarVal"></span> </p>
    </div>
@@ -93,7 +94,7 @@
   <div class = "term" id = "Fp">
    <p class="largeTerm"> f<sub>p</sub> </p>
    <div class = "slideContainer">
-     <input type="range" step="0.01" orient = "vertical" min="0" max="1" value="0" class="slider" id="FpIn">
+     <input type="range" step="0.01" min="0" max="1" value="0" class="slider" id="FpIn">
    </div>
    <p class = "smallNum">  <span id="FpVal"></span> </p>
  </div>
@@ -105,7 +106,9 @@
 <div class = "term" id = "Ne">
  <p class="largeTerm"> n<sub>e</sub> </p>
  <div class = "slideContainer">
-  <input type="range" orient = "vertical" min="0" max="100" value="0" class="slider" id="NeIn">
+  <p>
+  <input type="range" min="0" max="100" value="0" class="slider" id="NeIn">
+  </p>
 </div>
 <p class = "smallNum">  <span id="NeVal"></span> </p>
 </div>
@@ -117,7 +120,7 @@
 <div class = "term" id = "Fl">
  <p class="largeTerm"> f<sub>l</sub> </p>
  <div class = "slideContainer">
-  <input type="range" step = "0.01" orient = "vertical" min="0" max="1" value="0" class="slider" id="FlIn">
+  <input type="range" step = "0.01" min="0" max="1" value="0" class="slider" id="FlIn">
 </div>
 <p class = "smallNum">  <span id="FlVal"></span> </p>
 </div>
@@ -129,7 +132,7 @@
 <div class = "term" id = "Fi">
  <p class="largeTerm"> f<sub>i</sub> </p>
  <div class = "slideContainer">
-  <input type="range" step = "0.01" orient = "vertical" min="0" max="1" value="0" class="slider" id="FiIn">
+  <input type="range" step = "0.01" min="0" max="1" value="0" class="slider" id="FiIn">
 </div>
 <p class = "smallNum">  <span id="FiVal"></span> </p>
 </div>
@@ -141,7 +144,7 @@
 <div class = "term" id = "Fc">
  <p class="largeTerm"> f<sub>c</sub> </p>
  <div class = "slideContainer">
-  <input type="range" step = "0.01" orient = "vertical" min="0" max="1" value="0" class="slider" id="FcIn">
+  <input type="range" step = "0.01" min="0" max="1" value="0" class="slider" id="FcIn">
 </div>
 <p class = "smallNum">  <span id="FcVal"></span> </p>
 </div>
@@ -153,7 +156,7 @@
 <div class = "term" id = "L">
  <p class="largeTerm"> L<sub> </sub> </p>
  <div class = "slideContainer">
-  <input type="range" step = "10000" orient = "vertical" min="0" max="100000000" value="0" class="slider" id="LIn">
+  <input type="range" step = "10000" min="0" max="100000000" value="0" class="slider" id="LIn">
 </div>
 <p class = "smallNum">  <span id="LVal"></span> </p>
 </div>
@@ -164,7 +167,7 @@
 
 <div class = "sideContainer">
  <p class = "largeNum"><span id="Nval"></span></p>
- <button type="button" onclick="submitTerms()" id = "submit">Submit!</button> 
+ <button type="button" onclick="javascript:submitTerms()" id = "submit">Submit!</button> 
 </div>
 
 <div id = "NInfo">
@@ -223,18 +226,18 @@
     var output = document.getElementById(term + "Val");
     output.innerHTML = slider.value;
     if(term == "L"){
-      output.innerHTML = Number(slider.value).toExponential(2);  
+      output.innerText = Number(slider.value).toExponential(2);  
     }
     else{
-      output.innerHTML = slider.value;
+      output.innerText = slider.value;
     }
     calculateN(allTerms);
     slider.oninput = function() {
       if(term == "L"){
-        output.innerHTML = Number(this.value).toExponential(2);  
+        output.innerText = Number(this.value).toExponential(2);  
       }
       else{
-        output.innerHTML = this.value;
+        output.innerText = this.value;
       }
       calculateN(allTerms);
       termInfo("Rstar")

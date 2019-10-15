@@ -9,56 +9,56 @@
     #RstarInfo{
       display: none;
     }
-    #Rstar:hover ~#RstarInfo {
+    #Rstar:hover ~#RstarInfo{
       display: block;
     }
 
     #NInfo{
       display: none;
     }
-    #N:hover ~#NInfo {
+    #N:hover ~#NInfo{
       display: block;
     }
 
     #FpInfo{
       display: none;
     }
-    #Fp:hover ~#FpInfo {
+    #Fp:hover ~#FpInfo{
       display: block;
     }
 
     #NeInfo{
       display: none;
     }
-    #Ne:hover ~#NeInfo {
+    #Ne:hover ~#NeInfo{
       display: block;
     }
 
     #FlInfo{
       display: none;
     }
-    #Fl:hover ~#FlInfo {
+    #Fl:hover ~#FlInfo{
       display: block;
     }
 
     #FiInfo{
       display: none;
     }
-    #Fi:hover ~#FiInfo {
+    #Fi:hover ~#FiInfo{
       display: block;
     }
 
     #FcInfo{
       display: none;
     }
-    #Fc:hover ~#FcInfo {
+    #Fc:hover ~#FcInfo{
       display: block;
     }
 
     #LInfo{
       display: none;
     }
-    #L:hover ~#LInfo {
+    #L:hover ~#LInfo{
       display: block;
     }
   </style>
@@ -73,6 +73,7 @@
   <div id = "mainContainer">
     <div class ="sideContainer" id = "N">
      <p class="largeTerm"> N </p>
+     <p class = "smallNum"><span id="Nval"></span></p>
    </div>
 
    <div class ="term">
@@ -161,14 +162,16 @@
 <p class = "smallNum">  <span id="LVal"></span> </p>
 </div>
 
-<div class = "term">
- <p class = "largeTerm"> = </p>
+<div class = "dot">
 </div>
 
 <div class = "sideContainer">
- <p class = "largeNum"><span id="Nval"></span></p>
  <button type="button" onclick="javascript:submitTerms()" id = "submit">Submit!</button> 
 </div>
+
+<div class = "dot">
+</div>
+
 
 <div id = "NInfo">
   <p class = "smallNum">
@@ -232,7 +235,7 @@
       output.innerText = slider.value;
     }
     calculateN(allTerms);
-    slider.oninput = function() {
+    slider.oninput = function(){
       if(term == "L"){
         output.innerText = Number(this.value).toExponential(2);  
       }
@@ -255,22 +258,22 @@
 function calculateN(allTerms){
   var N = 1;
   var i = 0;
-  for (i = 0; i < allTerms.length; i++) {
-   termVal = document.getElementById(allTerms[i] + "In").value;
-   N = N * termVal;
- }
- localStorage.setItem("N", N)
- N = N.toExponential(3);
- output = document.getElementById("Nval");
- output.innerHTML = N;
+  for (i = 0; i < allTerms.length; i++){
+    termVal = document.getElementById(allTerms[i] + "In").value;
+    N = N * termVal;
+  }
+  localStorage.setItem("N", N)
+  N = N.toExponential(3);
+  output = document.getElementById("Nval");
+  output.innerHTML = N;
 }
 
 function submitTerms(){
- for (i = 0; i < allTerms.length; i++) {
-  termVal = document.getElementById(allTerms[i] + "In").value;
-  localStorage.setItem(allTerms[i] + "Val", JSON.stringify(termVal))
-}
-window.location.href = "result.html";
+  for (i = 0; i < allTerms.length; i++){
+    termVal = document.getElementById(allTerms[i] + "In").value;
+    localStorage.setItem(allTerms[i] + "Val", JSON.stringify(termVal))
+  }
+  window.location.href = "result.html";
 }
 
 var allTerms = ["Rstar", "Fp", "Ne", "Fl", "Fi", "Fc", "L"];

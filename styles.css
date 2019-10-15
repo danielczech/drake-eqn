@@ -1,71 +1,178 @@
-h1{ font-family: "Arial Narrow", Arial, sans; text-align:center; color:white;}
-h2{ font-family: "Arial Narrow", Arial, sans; text-align:center; color:white;}
+ :root {
+  --main-green: #4AF02B;
+  --bg-green: #42592E;
+}
 
-/* Special green colour for IAC: #4AF02B; background green: #40970e */
+h1{
+	font-family: "Lucida Console", Monaco, sans; 
+	text-align:center; 
+	color:var(--main-green);
+}
 
-* {margin-top: 10; padding: 0;}
-#mainContainer {text-align: center; height: 100%; width:100%; font-size: 20; margin-top: 5%;}
-.term, .dot, .sideContainer, .textContainer, .resultContainer {display: inline-block; *display: inline; zoom: 1; vertical-align: top;}
-.term{width: 5%; align-items: center;}
-.dot{width: 3%; align-items: center;}
-.sideContainer{width: 10%; align-items: center;}
-.resultContainer{width: 10%; align-items: center;}
-.textContainer{width: 60%; align-items: center;}
+h2{ 
+	font-family: "Lucida Console", Monaco, sans; 
+	text-align:center; 
+	color:var(--main-green);
+}
 
-p{color:white; margin:0;}
-.largeTerm{font-family: "Times New Roman", Times, serif; font-size: 50px; font-weight: bold; font-style: italic;}
-.generalTerm{text-align: center; font-family: "Times New Roman", Times, serif; font-weight: bold; font-style: italic;}
-.largeNum{font-family: "Arial Narrow", Arial, sans; font-size: 50px;}
-.smallNum{font-family: "Arial Narrow", Arial, sans; margin-bottom: 30px; font-size: 30px;}
-.resultFont{text-align: center; margin-top: 10px; font-family: "Arial Narrow", Arial, sans; font-size: 20px; color: white;}
-.selectFont{text-align: center; margin-top: 10px; font-family: "Arial Narrow", Arial, sans; font-size: 20px;}
-.textFont{text-align: left; margin-top: 10px; margin-left: 20px; font-family: "Arial Narrow", Arial, sans; font-size: 20px;}
+/* Special green colour for IAC: #4AF02B; background green: #40970E */
 
-span{}.lhFont{}
+*{
+	margin-top: 10; 
+	padding: 0;
+}
 
-.slideContainer {
+#mainContainer{
+	text-align: center; 
+	height: 100%; 
+	width:100%; 
+	font-size: 20; 
+	margin-top: 5%;
+}
+
+.term, .dot, .sideContainer, .textContainer, .resultContainer{
+	display: inline-block; 
+	*display: inline; 
+	zoom: 1; 
+	vertical-align: top;
+}
+
+.term{
+	width: 6%; 
+	align-items: center;
+}
+
+.dot{
+	width: 3%; 
+	align-items: center;
+}
+
+.sideContainer{
+	width: 6%; 
+	align-items: center;
+}
+
+.resultContainer{
+	width: 12%; 
+	align-items: center;
+}
+
+.textContainer{
+	width: 60%; 
+	align-items: center;
+}
+
+p{
+	color:var(--main-green); 
+	margin:0;
+}
+
+.largeTerm{
+	font-family: "Times New Roman", Times, serif; 
+	font-size: 50px; 
+	font-weight: bold; 
+	font-style: italic;
+}
+
+.generalTerm{
+	text-align: center; 
+	font-family: "Times New Roman", Times, serif; 
+	font-weight: bold; 
+	font-style: italic;
+}
+
+.largeNum{
+	font-family: "Lucida Console", Monaco, sans; 
+	font-size: 50px;
+}
+
+.smallNum{
+	font-family: "Lucida Console", Monaco, sans; 
+	margin-bottom: 30px; 
+	font-size: 25px;
+}
+
+.resultFont{
+	text-align: center; 
+	margin-top: 10px; 
+	font-family: "Lucida Console", Monaco, sans; 
+	font-weight: bold;
+	color: white;
+	font-size: 15px; 
+}
+
+.selectFont{
+	text-align: center; 
+	margin-top: 10px; 
+	font-family: "Lucida Console", Monaco, sans; 
+	font-size: 15px;
+}
+
+.textFont{
+	text-align: left; 
+	margin-top: 10px; 
+	margin-left: 20px; 
+	font-family: "Lucida Console", Monaco, sans; 
+	font-size: 15px;
+}
+
+.lhFont{
+    color: white;
+    font-family: "Lucida Console", Monaco, sans;
+    font-size: 15px;
+}
+
+.slideContainer{
     transform: rotate(270deg);
 	text-align: center;
     margin-top: 200px;
     margin-bottom: 60px;
 }
 
-.slider {
+.slider{
     align-items: center;
 	-webkit-appearance: none;
 	width: 200px;
 	height: 10px;
 	border-radius: 8px;
-	background: #505050;
+	background: var(--bg-green);
 	outline: none;
 	opacity: 0.5;
 	-webkit-transition: .2s;
 	transition: opacity .2s;
 }
 
-.slider:hover {
+.slider:hover{
 	opacity: 1;
 }
 
-.slider::-moz-range-thumb {
-	width: 25px;
-	height: 25px;
+.slider::-moz-range-thumb{
+	width: 33px;
+	height: 33px;
 	border-radius: 50%;
-	background: white;
+	background: var(--main-green);
 	cursor: pointer;
 }
 
-.slider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb{
 	-webkit-appearance: none;
-	width: 25px;
-	height: 25px;
+	width: 33px;
+	height: 33px;
 	border-radius: 50%;
-	background: white;
+	background: var(--main-green);
 	cursor: pointer;
 }
 
-#submit {
-	font-family: "Arial", Arial, sans;
+.slider::-ms-thumb{
+    width: 33px;
+	height: 33px;
+	border-radius: 50%;
+	background: var(--main-green);
+    cursor: pointer;
+}
+
+#submit{
+	font-family: "Lucida Console", Monaco, sans;
 	margin-top: 10px;
 	margin-bottom: 20px;
 	background-color: black;
@@ -73,14 +180,14 @@ span{}.lhFont{}
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 5px;
 	border-radius: 15px;
-	color: white;
+	color: var(--main-green);
 	font-size: 20px;
 	text-decoration: none;
-	border-color: white;
+	border-color: var(--main-green);
 	border-style: solid;
 	border-width: medium;
 }
 
-#submit:hover {
-	background-color: #505050;
+#submit:hover{
+	background-color: var(--bg-green);
 }

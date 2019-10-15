@@ -141,12 +141,12 @@
   }
 
   function checkLikelihood(userVal, min, max){
-    var output = "neutral.".fontcolor("#6AD1E3");
+    var output = "neutral.".fontcolor("white"); //#6AD1E3
     if(userVal < min){
-      output = "doubtful.".fontcolor("#F44934");
+      output = "doubtful.".fontcolor("white"); //#F44934
     }
     else if(userVal > max){
-      output = "optimistic.".fontcolor("#4AF02B");
+      output = "optimistic.".fontcolor("white"); //#4AF02B
     } 
     return output;
   }

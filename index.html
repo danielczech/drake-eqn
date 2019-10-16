@@ -72,19 +72,19 @@
 
   <div id = "mainContainer">
     <div class ="sideContainer" id = "N">
-     <p class="largeTerm"> N <sub></sub></p>
-     <p class = "smallNum"><span id="Nval"></span></p>
+     <p class = "largeTerm"> N <sub></sub></p>
+     <p class = "smallNum"><span id = "Nval"></span></p>
    </div>
 
    <div class ="term">
-     <p class="largeTerm"> = </p>
+     <p class = "largeTerm"> = </p>
    </div>
 
    <div id = "Rstar" class = "term">
-     <p class="largeTerm"> R<sub>*</sub></p>
-       <p class = "smallNum">  <span id="RstarVal"></span> </p>
+     <p class = "largeTerm"> R<sub>*</sub></p>
+       <p class = "smallNum">  <span id = "RstarVal"></span> </p>
      <div class = "slideContainer">
-       <input type="range" min="0" max="10" value="0" class="slider" id="RstarIn">
+       <input type = "range" min = "0" max = "10" value = "0" class = "slider" id = "RstarIn">
      </div>
    </div>
 
@@ -93,10 +93,10 @@
   </div>
 
   <div class = "term" id = "Fp">
-   <p class="largeTerm"> f<sub>p</sub> </p>
-   <p class = "smallNum">  <span id="FpVal"></span> </p>
+   <p class = "largeTerm"> f<sub>p</sub> </p>
+   <p class = "smallNum">  <span id = "FpVal"></span> </p>
    <div class = "slideContainer">
-     <input type="range" step="0.01" min="0" max="1" value="0" class="slider" id="FpIn">
+     <input type = "range" step = "0.01" min = "0" max = "1" value = "0" class = "slider" id = "FpIn">
    </div>
  </div>
 
@@ -105,11 +105,11 @@
 </div>
 
 <div class = "term" id = "Ne">
- <p class="largeTerm"> n<sub>e</sub> </p>
- <p class = "smallNum">  <span id="NeVal"></span> </p>
+ <p class = "largeTerm"> n<sub>e</sub> </p>
+ <p class = "smallNum">  <span id = "NeVal"></span> </p>
  <div class = "slideContainer">
   <p>
-  <input type="range" min="0" max="100" value="0" class="slider" id="NeIn">
+  <input type = "range" min = "0" max = "20" value = "0" class = "slider" id = "NeIn">
   </p>
 </div>
 </div>
@@ -119,10 +119,10 @@
 </div>
 
 <div class = "term" id = "Fl">
- <p class="largeTerm"> f<sub>l</sub> </p>
- <p class = "smallNum">  <span id="FlVal"></span> </p>
+ <p class = "largeTerm"> f<sub>l</sub> </p>
+ <p class = "smallNum">  <span id = "FlVal"></span> </p>
  <div class = "slideContainer">
-  <input type="range" step = "0.01" min="0" max="1" value="0" class="slider" id="FlIn">
+  <input type = "range" step = "0.01" min = "0" max = "1" value = "0" class = "slider" id = "FlIn">
 </div>
 </div>
 
@@ -131,10 +131,10 @@
 </div>
 
 <div class = "term" id = "Fi">
- <p class="largeTerm"> f<sub>i</sub> </p>
- <p class = "smallNum">  <span id="FiVal"></span> </p>
+ <p class = "largeTerm"> f<sub>i</sub> </p>
+ <p class = "smallNum">  <span id = "FiVal"></span> </p>
  <div class = "slideContainer">
-  <input type="range" step = "0.01" min="0" max="1" value="0" class="slider" id="FiIn">
+  <input type = "range" step = "0.01" min = "0" max = "1" value = "0" class = "slider" id = "FiIn">
 </div>
 </div>
 
@@ -143,10 +143,10 @@
 </div>
 
 <div class = "term" id = "Fc">
- <p class="largeTerm"> f<sub>c</sub> </p>
- <p class = "smallNum">  <span id="FcVal"></span> </p>
+ <p class = "largeTerm"> f<sub>c</sub> </p>
+ <p class = "smallNum">  <span id = "FcVal"></span> </p>
  <div class = "slideContainer">
-  <input type="range" step = "0.01" min="0" max="1" value="0" class="slider" id="FcIn">
+  <input type = "range" step = "0.01" min = "0" max = "1" value = "0" class = "slider" id = "FcIn">
 </div>
 </div>
 
@@ -155,10 +155,10 @@
 </div>
 
 <div class = "term" id = "L">
- <p class="largeTerm"> L<sub> </sub> </p>
-<p class = "smallNum">  <span id="LVal"></span> </p>
+ <p class = "largeTerm"> L<sub> </sub> </p>
+<p class = "smallNum">  <span id = "LVal"></span> </p>
  <div class = "slideContainer">
-  <input type="range" step = "10000" min="0" max="100000000" value="0" class="slider" id="LIn">
+  <input type = "range" step = "100" min = "0" max = "100000000" value = "0" class = "slider" id = "LIn">
 </div>
 </div>
 
@@ -166,7 +166,9 @@
 </div>
 
 <div class = "sideContainer">
- <button type="button" onclick="javascript:submitTerms()" id = "submit">Submit!</button> 
+<p class = " smallText">
+ <button type = "button" onclick = "javascript:submitTerms()" id = "submit">Submit!</button> 
+</p>
 </div>
 
 <div class = "dot">
@@ -174,49 +176,49 @@
 
 
 <div id = "NInfo">
-  <p class = "smallNum">
+  <p class = "smallText">
     <span class = "generalTerm">N</span>: The number of civilisations in our galaxy with which communication might be possible.
   </p>
 </div>
 
 <div id = "RstarInfo">
-  <p class = "smallNum">
+  <p class = "smallText">
     <span class = "generalTerm">R<sub>*</sub></span>: The average rate of star formation in our galaxy.
   </p>
 </div>
 
 <div id = "FpInfo">
-  <p class = "smallNum">
+  <p class = "smallText">
     <span class = "generalTerm">f<sub>p</sub></span>: The fraction of stars which have planets.
   </p>
 </div>
 
 <div id = "NeInfo">
-  <p class = "smallNum">
-    <span class = "generalTerm">n<sub>e</sub></span>: The fraction of planets that could potentially support life.
+  <p class = "smallText">
+    <span class = "generalTerm">n<sub>e</sub></span>: The average number of potentially life-supporting planets per star.
   </p>
 </div>
 
 <div id = "FlInfo">
-  <p class = "smallNum">
+  <p class = "smallText">
     <span class = "generalTerm">f<sub>l</sub></span>: The fraction of potentially life-supporting planets on which life does arise.
   </p>
 </div>
 
 <div id = "FiInfo">
-  <p class = "smallNum">
+  <p class = "smallText">
     <span class = "generalTerm">f<sub>i</sub></span>: The fraction of planets with life on which intelligent life arises.
   </p>
 </div>
 
 <div id = "FcInfo">
-  <p class = "smallNum">
+  <p class = "smallText">
     <span class = "generalTerm">f<sub>c</sub></span>: The fraction of civilisations which exhibit a detectable technosignature.
   </p>
 </div>
 
 <div id = "LInfo">
-  <p class = "smallNum">
+  <p class = "smallText">
     <span class = "generalTerm">L</span>: The length of time intelligent civilisations exhibit a detectable technosignature.
   </p>
 </div>

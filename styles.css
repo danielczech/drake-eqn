@@ -3,7 +3,11 @@
   --bg-green: #42592E;
   --general: white;
   --bg-general: #505050;
+  --neutral: #6BCAFA;
+  --optimistic: #A3E879;
+  --doubtful: #F76248;
 }
+
 
 h1{
 	font-family: "Lucida Console", Monaco, sans; 
@@ -53,8 +57,10 @@ h2{
 }
 
 .resultContainer{
+	margin-top: 0.3%;
 	width: 12%; 
 	align-items: center;
+    top: 50%;
 }
 
 .textContainer{
@@ -85,25 +91,30 @@ p{
 }
 
 .largeNum{
-	color:var(--general);
+	color:var(--main-green);
 	font-family: "Lucida Console", Monaco, sans; 
-	font-size: 50px;
+	font-size: 30px;
 }
 
 .smallNum{
+	color:var(--main-green);
+	font-family: "Lucida Console", Monaco, sans; 
+	font-size: 22px;
+}
+
+.smallText{
 	color:var(--general);
 	font-family: "Lucida Console", Monaco, sans; 
 	font-size: 22px;
 }
 
 .resultFont{
-    color:var(--general);
+    color:var(--main-green);
 	text-align: center; 
 	margin-top: 10px; 
 	font-family: "Lucida Console", Monaco, sans; 
 	font-weight: bold;
-	color: white;
-	font-size: 14px; 
+	font-size: 22px; 
 }
 
 .selectFont{
@@ -188,7 +199,7 @@ p{
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 5px;
 	border-radius: 15px;
-	color: var(--main-green);
+	color: var(--general);
 	font-size: 20px;
 	text-decoration: none;
 	border-color: var(--general);

@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body bgcolor = "black">
-  <h1>Your selection predicts <span class = "generalTerm">N = </span><span id = "NCivs"></span> civilisations</h1>
+  <h1>Your selection predicts <span class = "largeNum">N = <span id = "NCivs"></span> </span>civilisations</h1>
 
   <div class maincontainer>
     <div class ="sideContainer" id = "Rstar">
@@ -15,7 +15,6 @@
      <p class="largeTerm"> <i>R<sub>*</sub></i> </p>
    </div>
    <div class ="resultContainer">
-     <p class="selectFont"> You selected: </p>
      <p class="resultFont"> <span id = "RstarResult"></span> </p>
    </div>
    <div class ="textContainer">
@@ -32,7 +31,6 @@
    <p class="largeTerm"> <i>f<sub>p</sub></i> </p>
  </div>
  <div class ="resultContainer">
-   <p class="selectFont"> You selected: </p>
    <p class="resultFont"><span id = "FpResult"></span></p>
  </div>
  <div class ="textContainer">
@@ -49,7 +47,6 @@
    <p class="largeTerm"> <i>n<sub>e</sub></i> </p>
  </div>
  <div class ="resultContainer">
-   <p class="selectFont"> You selected: </p>
    <p class="resultFont"><span id = "NeResult"></span></p>
  </div>
  <div class ="textContainer">
@@ -66,7 +63,6 @@
    <p class="largeTerm"> <i>f<sub>l</sub></i> </p>
  </div>
  <div class ="resultContainer">
-   <p class="selectFont"> You selected: </p>
    <p class="resultFont"><span id = "FlResult"></span></p>
  </div>
  <div class = "textContainer">
@@ -83,7 +79,6 @@
    <p class="largeTerm"> <i>f<sub>i</sub></i> </p>
  </div>
  <div class ="resultContainer">
-   <p class="selectFont"> You selected: </p>
    <p class="resultFont"><span id = "FiResult"></span></p>
  </div>
  <div class = "textContainer">
@@ -100,7 +95,6 @@
    <p class="largeTerm"> <i>f<sub>c</sub></i> </p>
  </div>
  <div class ="resultContainer">
-   <p class="selectFont"> You selected: </p>
    <p class="resultFont"><span id = "FcResult"></span></p>
  </div>
  <div class = "textContainer">
@@ -117,7 +111,6 @@
    <p class="largeTerm"> <i>L<sub></sub></i> </p>
  </div>
  <div class ="resultContainer">
-   <p class="selectFont"> You selected: </p>
    <p class="resultFont"><span id = "LResult"></span></p>
  </div>
  <div class = "textContainer">
@@ -141,12 +134,12 @@
   }
 
   function checkLikelihood(userVal, min, max){
-    var output = "neutral.".fontcolor("white"); //#6AD1E3
+    var output = "neutral.".fontcolor("#6BCAFA"); //#6AD1E3
     if(userVal < min){
-      output = "doubtful.".fontcolor("white"); //#F44934
+      output = "doubtful.".fontcolor("#F76248"); //#F44934
     }
     else if(userVal > max){
-      output = "optimistic.".fontcolor("white"); //#4AF02B
+      output = "optimistic.".fontcolor("#A3E879"); //#4AF02B
     } 
     return output;
   }
@@ -159,7 +152,7 @@
   allTerms.forEach(showValue);
 
   var min = [1.5, 0.7, 3, 0.5, 0.5, 304];
-  var max = [3, 0.7, 5, 0.5, 0.5, 1000000];
+  var max = [3, 0.7, 5, 0.5, 0.5, 10000];
   var i = 0;
   for(i = 0; i < allTerms.length; i++){
     showLikelihood(allTerms[i], min[i], max[i]);

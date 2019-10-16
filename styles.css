@@ -1,24 +1,23 @@
  :root {
   --main-green: #4AF02B;
   --bg-green: #42592E;
+  --general: white;
+  --bg-general: #505050;
 }
 
 h1{
 	font-family: "Lucida Console", Monaco, sans; 
 	text-align:center; 
-	color:var(--main-green);
+	color:var(--general);
 }
 
 h2{ 
 	font-family: "Lucida Console", Monaco, sans; 
 	text-align:center; 
-	color:var(--main-green);
+	color:var(--general);
 }
 
-/* Special green colour for IAC: #4AF02B; background green: #40970E */
-
 *{
-	margin-top: 10; 
 	padding: 0;
 }
 
@@ -50,6 +49,7 @@ h2{
 .sideContainer{
 	width: 6%; 
 	align-items: center;
+	/*margin-bottom: 2%;*/
 }
 
 .resultContainer{
@@ -58,23 +58,26 @@ h2{
 }
 
 .textContainer{
-	width: 60%; 
+	width: 70%; 
 	align-items: center;
 }
 
-p{
-	color:var(--main-green); 
+p{ 
 	margin:0;
+	margin-bottom: 3%;
 }
 
 .largeTerm{
+    color:var(--main-green);
 	font-family: "Times New Roman", Times, serif; 
 	font-size: 50px; 
 	font-weight: bold; 
 	font-style: italic;
+	margin-bottom: 10%;
 }
 
 .generalTerm{
+	color:var(--general);
 	text-align: center; 
 	font-family: "Times New Roman", Times, serif; 
 	font-weight: bold; 
@@ -82,60 +85,65 @@ p{
 }
 
 .largeNum{
+	color:var(--general);
 	font-family: "Lucida Console", Monaco, sans; 
 	font-size: 50px;
 }
 
 .smallNum{
+	color:var(--general);
 	font-family: "Lucida Console", Monaco, sans; 
-	margin-bottom: 30px; 
-	font-size: 25px;
+	font-size: 22px;
 }
 
 .resultFont{
+    color:var(--general);
 	text-align: center; 
 	margin-top: 10px; 
 	font-family: "Lucida Console", Monaco, sans; 
 	font-weight: bold;
 	color: white;
-	font-size: 15px; 
+	font-size: 14px; 
 }
 
 .selectFont{
+    color:var(--general);
 	text-align: center; 
 	margin-top: 10px; 
 	font-family: "Lucida Console", Monaco, sans; 
-	font-size: 15px;
+	font-size: 14px;
 }
 
 .textFont{
+    color:var(--general);
 	text-align: left; 
 	margin-top: 10px; 
 	margin-left: 20px; 
 	font-family: "Lucida Console", Monaco, sans; 
-	font-size: 15px;
+	font-size: 14px;
 }
 
 .lhFont{
-    color: white;
+    color: var(--general);
     font-family: "Lucida Console", Monaco, sans;
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .slideContainer{
     transform: rotate(270deg);
 	text-align: center;
-    margin-top: 200px;
-    margin-bottom: 60px;
+    margin-top: 270%;
+    margin-bottom: 60%;
 }
 
 .slider{
     align-items: center;
 	-webkit-appearance: none;
-	width: 200px;
+	width: 300%;
 	height: 10px;
 	border-radius: 8px;
-	background: var(--bg-green);
+	background: var(--bg-general);
 	outline: none;
 	opacity: 0.5;
 	-webkit-transition: .2s;
@@ -150,7 +158,7 @@ p{
 	width: 33px;
 	height: 33px;
 	border-radius: 50%;
-	background: var(--main-green);
+	background: var(--general);
 	cursor: pointer;
 }
 
@@ -159,7 +167,7 @@ p{
 	width: 33px;
 	height: 33px;
 	border-radius: 50%;
-	background: var(--main-green);
+	background: var(--general);
 	cursor: pointer;
 }
 
@@ -167,7 +175,7 @@ p{
     width: 33px;
 	height: 33px;
 	border-radius: 50%;
-	background: var(--main-green);
+	background: var(--general);
     cursor: pointer;
 }
 
@@ -183,11 +191,11 @@ p{
 	color: var(--main-green);
 	font-size: 20px;
 	text-decoration: none;
-	border-color: var(--main-green);
+	border-color: var(--general);
 	border-style: solid;
 	border-width: medium;
 }
 
 #submit:hover{
-	background-color: var(--bg-green);
+	background-color: var(--bg-general);
 }

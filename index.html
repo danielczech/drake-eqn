@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset = "UTF-8">
+  <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+  <link rel = "stylesheet" href = "styles.css">
   <style>
 
     #RstarInfo{
@@ -84,7 +84,7 @@
      <p class = "largeTerm"> R<sub>*</sub></p>
        <p class = "smallNum">  <span id = "RstarVal"></span> </p>
      <div class = "slideContainer">
-       <input type = "range" min = "0" max = "10" value = "0" class = "slider" id = "RstarIn">
+       <input type = "range" step = "0.1" min = "0" max = "10" value = "5" class = "slider" id = "RstarIn">
      </div>
    </div>
 
@@ -94,9 +94,9 @@
 
   <div class = "term" id = "Fp">
    <p class = "largeTerm"> f<sub>p</sub> </p>
-   <p class = "smallNum">  <span id = "FpVal"></span> </p>
+   <p class = "smallNum"> <span id = "FpVal"> </span> </p>
    <div class = "slideContainer">
-     <input type = "range" step = "0.01" min = "0" max = "1" value = "0" class = "slider" id = "FpIn">
+     <input type = "range" step = "0.01" min = "0" max = "1" value = "0.5" class = "slider" id = "FpIn">
    </div>
  </div>
 
@@ -106,10 +106,10 @@
 
 <div class = "term" id = "Ne">
  <p class = "largeTerm"> n<sub>e</sub> </p>
- <p class = "smallNum">  <span id = "NeVal"></span> </p>
+ <p class = "smallNum"> <span id = "NeVal"> </span> </p>
  <div class = "slideContainer">
   <p>
-  <input type = "range" min = "0" max = "20" value = "0" class = "slider" id = "NeIn">
+  <input type = "range" step = "0.1" min = "0" max = "20" value = "10" class = "slider" id = "NeIn">
   </p>
 </div>
 </div>
@@ -120,9 +120,9 @@
 
 <div class = "term" id = "Fl">
  <p class = "largeTerm"> f<sub>l</sub> </p>
- <p class = "smallNum">  <span id = "FlVal"></span> </p>
+ <p class = "smallNum"> <span id = "FlVal"> </span> </p>
  <div class = "slideContainer">
-  <input type = "range" step = "0.01" min = "0" max = "1" value = "0" class = "slider" id = "FlIn">
+  <input type = "range" step = "0.01" min = "0" max = "1" value = "0.5" class = "slider" id = "FlIn">
 </div>
 </div>
 
@@ -132,9 +132,9 @@
 
 <div class = "term" id = "Fi">
  <p class = "largeTerm"> f<sub>i</sub> </p>
- <p class = "smallNum">  <span id = "FiVal"></span> </p>
+ <p class = "smallNum"> <span id = "FiVal"> </span> </p>
  <div class = "slideContainer">
-  <input type = "range" step = "0.01" min = "0" max = "1" value = "0" class = "slider" id = "FiIn">
+  <input type = "range" step = "0.01" min = "0" max = "1" value = "0.5" class = "slider" id = "FiIn">
 </div>
 </div>
 
@@ -144,9 +144,9 @@
 
 <div class = "term" id = "Fc">
  <p class = "largeTerm"> f<sub>c</sub> </p>
- <p class = "smallNum">  <span id = "FcVal"></span> </p>
+ <p class = "smallNum"> <span id = "FcVal"> </span> </p>
  <div class = "slideContainer">
-  <input type = "range" step = "0.01" min = "0" max = "1" value = "0" class = "slider" id = "FcIn">
+  <input type = "range" step = "0.01" min = "0" max = "1" value = "0.5" class = "slider" id = "FcIn">
 </div>
 </div>
 
@@ -156,9 +156,9 @@
 
 <div class = "term" id = "L">
  <p class = "largeTerm"> L<sub> </sub> </p>
-<p class = "smallNum">  <span id = "LVal"></span> </p>
+<p class = "smallNum"> <span id = "LVal"> </span> </p>
  <div class = "slideContainer">
-  <input type = "range" step = "100" min = "0" max = "100000000" value = "0" class = "slider" id = "LIn">
+  <input type = "range" step = "0.5" min = "1" max = "100" value = "50" class = "slider" id = "LIn">
 </div>
 </div>
 
@@ -166,7 +166,7 @@
 </div>
 
 <div class = "sideContainer">
-<p class = " smallText">
+<p class = "smallText">
  <button type = "button" onclick = "javascript:submitTerms()" id = "submit">Submit!</button> 
 </p>
 </div>
@@ -195,7 +195,7 @@
 
 <div id = "NeInfo">
   <p class = "smallText">
-    <span class = "generalTerm">n<sub>e</sub></span>: The average number of potentially life-supporting planets per star.
+    <span class = "generalTerm">n<sub>e</sub></span>: The average number of potentially life-supporting planets per star which has planets.
   </p>
 </div>
 
@@ -207,7 +207,7 @@
 
 <div id = "FiInfo">
   <p class = "smallText">
-    <span class = "generalTerm">f<sub>i</sub></span>: The fraction of planets with life on which intelligent life arises.
+    <span class = "generalTerm">f<sub>i</sub></span>: The fraction of life-hosting planets on which intelligent life arises.
   </p>
 </div>
 
@@ -219,7 +219,7 @@
 
 <div id = "LInfo">
   <p class = "smallText">
-    <span class = "generalTerm">L</span>: The length of time intelligent civilisations exhibit a detectable technosignature.
+    <span class = "generalTerm">L</span>: The length of time for which intelligent civilisations exhibit a detectable technosignature.
   </p>
 </div>
 </div>
@@ -231,7 +231,8 @@
     var output = document.getElementById(term + "Val");
     output.innerHTML = slider.value;
     if(term == "L"){
-      output.innerText = Number(slider.value).toExponential(2);  
+      var LOutput = logScale(Number(slider.value), 1, 10e7);
+      output.innerText = LOutput.toFixed() 
     }
     else{
       output.innerText = slider.value;
@@ -239,23 +240,27 @@
     calculateN(allTerms);
     slider.oninput = function(){
       if(term == "L"){
-        output.innerText = Number(this.value).toExponential(2);  
+          // output.innerText = Number(this.value).toExponential(2);
+          var LOutput = logScale(Number(this.value), 1, 10e7);
+          output.innerText = LOutput.toFixed()  
       }
       else{
         output.innerText = this.value;
       }
       calculateN(allTerms);
-      termInfo("Rstar")
     }
   }
 
-// function logScale(inputVal, lowVal, highVal){
-//   // We assume 0 <= inputVal <= 100
-//   var lowScale = Math.log(lowVal);
-//   var highScale = Math.log(highVal);
-//   var scaleRange = (highScale - lowscale)/100.0 
-//   return Math.exp(inputVal*scaleRange)
-// }
+function logScale(inputVal, lowVal, highVal){
+  // Outputs a log scale from lowVal to highVal
+  // for a linear input.
+  // lowVal and highVal may not be 0.
+  // We assume 0 <= inputVal <= 100.
+  var lowScale = Math.log(lowVal);
+  var highScale = Math.log(highVal);
+  var scaleRange = (highScale - lowScale)/100.0 
+  return Math.exp(inputVal*scaleRange)
+}
 
 function calculateN(allTerms){
   var N = 1;
@@ -265,9 +270,9 @@ function calculateN(allTerms){
     N = N * termVal;
   }
   localStorage.setItem("N", N)
-  N = N.toExponential(3);
+  //N = N.toExponential(3);
   output = document.getElementById("Nval");
-  output.innerHTML = N;
+  output.innerHTML = N.toFixed();
 }
 
 function submitTerms(){
@@ -289,4 +294,3 @@ for(i = 0; i < allTerms.length; i++){
 </script>
 </body>
 </html>
-

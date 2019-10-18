@@ -1,4 +1,4 @@
- :root {
+ :root{
   --main-green: #4AF02B;
   --bg-green: #42592E;
   --general: white;
@@ -11,14 +11,14 @@
 
 h1{
 	font-family: "Lucida Console", Monaco, sans; 
-	text-align:center; 
-	color:var(--general);
+	text-align: center; 
+	color: var(--general);
 }
 
 h2{ 
 	font-family: "Lucida Console", Monaco, sans; 
-	text-align:center; 
-	color:var(--general);
+	text-align: center; 
+	color: var(--general);
 }
 
 *{
@@ -28,7 +28,7 @@ h2{
 #mainContainer{
 	text-align: center; 
 	height: 100%; 
-	width:100%; 
+	width: 100%; 
 	font-size: 20; 
 	margin-top: 5%;
 }
@@ -69,12 +69,12 @@ h2{
 }
 
 p{ 
-	margin:0;
+	margin: 0;
 	margin-bottom: 3%;
 }
 
 .largeTerm{
-    color:var(--main-green);
+    color: var(--main-green);
 	font-family: "Times New Roman", Times, serif; 
 	font-size: 50px; 
 	font-weight: bold; 
@@ -83,7 +83,7 @@ p{
 }
 
 .generalTerm{
-	color:var(--general);
+	color: var(--general);
 	text-align: center; 
 	font-family: "Times New Roman", Times, serif; 
 	font-weight: bold; 
@@ -91,25 +91,25 @@ p{
 }
 
 .largeNum{
-	color:var(--main-green);
+	color: var(--main-green);
 	font-family: "Lucida Console", Monaco, sans; 
 	font-size: 30px;
 }
 
 .smallNum{
-	color:var(--main-green);
+	color: var(--main-green);
 	font-family: "Lucida Console", Monaco, sans; 
 	font-size: 22px;
 }
 
 .smallText{
-	color:var(--general);
+	color: var(--general);
 	font-family: "Lucida Console", Monaco, sans; 
 	font-size: 22px;
 }
 
 .resultFont{
-    color:var(--main-green);
+    color: var(--main-green);
 	text-align: center; 
 	margin-top: 10px; 
 	font-family: "Lucida Console", Monaco, sans; 
@@ -118,7 +118,7 @@ p{
 }
 
 .selectFont{
-    color:var(--general);
+    color: var(--general);
 	text-align: center; 
 	margin-top: 10px; 
 	font-family: "Lucida Console", Monaco, sans; 
@@ -126,7 +126,7 @@ p{
 }
 
 .textFont{
-    color:var(--general);
+    color: var(--general);
 	text-align: left; 
 	margin-top: 10px; 
 	margin-left: 20px; 
@@ -136,6 +136,8 @@ p{
 
 .lhFont{
     color: var(--general);
+    text-align: left; 
+	margin-top: 10px; 
     font-family: "Lucida Console", Monaco, sans;
     font-size: 14px;
     font-weight: bold;

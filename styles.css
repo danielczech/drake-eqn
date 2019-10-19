@@ -8,7 +8,6 @@
   --doubtful: #F76248;
 }
 
-
 h1{
 	font-family: "Lucida Console", Monaco, sans; 
 	text-align: center; 
@@ -25,15 +24,16 @@ h2{
 	padding: 0;
 }
 
-#mainContainer{
+.mainContainer{
 	text-align: center; 
+	align-items: center;
 	height: 100%; 
 	width: 100%; 
 	font-size: 20; 
 	margin-top: 5%;
 }
 
-.term, .dot, .sideContainer, .textContainer, .resultContainer{
+.term, .dot, .sideContainer, .textContainer, .resultContainer, .timeContainer{
 	display: inline-block; 
 	*display: inline; 
 	zoom: 1; 
@@ -43,6 +43,10 @@ h2{
 .term{
 	width: 6%; 
 	align-items: center;
+}
+
+.timeContainer{
+	width: 30%; 
 }
 
 .dot{
@@ -71,6 +75,38 @@ h2{
 p{ 
 	margin: 0;
 	margin-bottom: 3%;
+}
+
+.statsPar{
+	margin:0;
+	font-size: 20px;
+	color: var(--general);
+	font-family: "Lucida Console", Monaco, sans;
+}
+
+.medianParA{
+	margin:0;
+	font-size: 20px;
+	color: var(--general);
+	font-weight: bold;
+	text-align: right;
+	font-family: "Lucida Console", Monaco, sans;
+}
+
+.medianParB{
+	margin:0;
+	font-size: 20px;
+	color: var(--general);
+	font-weight: bold;
+	font-family: "Lucida Console", Monaco, sans;
+}
+
+.timePar{
+	margin:0;
+	text-align: right;
+	font-size: 20px;
+	color: var(--general);
+	font-family: "Lucida Console", Monaco, sans;
 }
 
 .largeTerm{

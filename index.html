@@ -70,7 +70,7 @@
 
 <body bgcolor = "black">
 
-  <div id = "mainContainer">
+  <div class = "mainContainer">
     <div class ="sideContainer" id = "N">
      <p class = "largeTerm"> N <sub></sub></p>
      <p class = "smallNum"><span id = "Nval"></span></p>
@@ -168,6 +168,8 @@
 <div class = "sideContainer">
 <p class = "smallText">
  <button type = "button" onclick = "javascript:submitTerms()" id = "submit">Submit!</button> 
+ <!-- Uncomment to enable a button to view recorded local session data -->
+ <!-- <button type = "button" onclick = "javascript:sessionStats()" id = "submit">Session</button>  -->
 </p>
 </div>
 
@@ -232,7 +234,7 @@
     output.innerHTML = slider.value;
     if(term == "L"){
       var LOutput = logScale(Number(slider.value), 1, 10e7);
-      output.innerText = LOutput.toFixed() 
+      output.innerText = Math.round(LOutput); 
     }
     else{
       output.innerText = slider.value;
@@ -242,7 +244,7 @@
       if(term == "L"){
           // output.innerText = Number(this.value).toExponential(2);
           var LOutput = logScale(Number(this.value), 1, 10e7);
-          output.innerText = LOutput.toFixed()  
+          output.innerText = Math.round(LOutput);
       }
       else{
         output.innerText = this.value;
@@ -264,29 +266,90 @@ function logScale(inputVal, lowVal, highVal){
 
 function calculateN(allTerms){
   var N = 1;
-  var i = 0;
+  var i;
   for (i = 0; i < allTerms.length; i++){
     termVal = document.getElementById(allTerms[i] + "In").value;
     N = N * termVal;
   }
-  localStorage.setItem("N", N)
+  N = Math.round(N);
+  localStorage.setItem("N", JSON.stringify(N));
   //N = N.toExponential(3);
   output = document.getElementById("Nval");
-  output.innerHTML = N.toFixed();
+  output.innerHTML = N;
+}
+
+function sessionStats(){
+  window.location.href = "session.html";
+}
+
+function saveTermVals(term, val){
+  termArr = JSON.parse(localStorage.getItem(term + "SessionVals"));
+  termArr[termArr.length] = val;
+  localStorage.setItem(term + "SessionVals", JSON.stringify(termArr));
 }
 
 function submitTerms(){
+  // Save N
+  N = JSON.parse(localStorage.getItem("N"));
+  saveTermVals("N", N);
+  // Save all term values
+  var i;
   for (i = 0; i < allTerms.length; i++){
-    termVal = document.getElementById(allTerms[i] + "In").value;
-    localStorage.setItem(allTerms[i] + "Val", JSON.stringify(termVal))
+    termVal = Number(document.getElementById(allTerms[i] + "In").value);
+    localStorage.setItem(allTerms[i] + "Val", JSON.stringify(termVal));
+    saveTermVals(allTerms[i], termVal);
   }
+  // Save current time
+  time = getNow();
+  saveTermVals("time", time);
   window.location.href = "result.html";
+}
+
+function pad(n){
+  return n<10 ? '0'+n : n;
+}
+
+function getNow(){
+  var now = new Date();
+  yyyy = now.getFullYear();
+  mm = pad(now.getMonth());
+  dd = pad(now.getDate());
+  hr = pad(now.getHours());
+  min = pad(now.getMinutes());
+  sec = pad(now.getSeconds());
+  var time = yyyy + '-' + mm +'-' + dd + ' ' + hr + ':' + min + ':' + sec;
+  return time;
+}
+
+function initSession(){
+  //Value of N
+  if(localStorage.getItem("NSessionVals") === null){
+    var NArr = ["N"];
+    localStorage.setItem("NSessionVals", JSON.stringify(NArr));
+  }
+  //Value of each term
+  var i;
+  for(i = 0; i <allTerms.length; i++){
+    termArrName = allTerms[i] + "SessionVals";
+    if(localStorage.getItem(termArrName) === null){
+      var termArr = [allTerms[i]];
+      localStorage.setItem(allTerms[i] + "SessionVals", JSON.stringify(termArr));
+    }
+  }
+  //Time
+  if(localStorage.getItem("timeSessionVals") === null){
+    timeArr = ["time"];
+    localStorage.setItem("timeSessionVals", JSON.stringify(timeArr));
+  }
 }
 
 var allTerms = ["Rstar", "Fp", "Ne", "Fl", "Fi", "Fc", "L"];
 localStorage.setItem("allTerms", JSON.stringify(allTerms));
 
-var i = 0;
+//Initialise 
+initSession();
+
+var i;
 for(i = 0; i < allTerms.length; i++){
   updateEqn(allTerms[i], allTerms);
 }

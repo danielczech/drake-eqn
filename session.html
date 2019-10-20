@@ -114,12 +114,12 @@
 function fillTime(){
 	timeVals = JSON.parse(localStorage.getItem("timeSessionVals"));
 	toInsert = timeVals[1] + "<br>";
-    var i;
-    for(i = 2; i < termVals.length; i++){
-    	toInsert = toInsert + timeVals[i] + "<br>";
-    }
-    termOut = document.getElementById("timeValIn");
-    termOut.innerHTML = toInsert;
+	var i;
+	for(i = 2; i < termVals.length; i++){
+	   	toInsert = toInsert + timeVals[i] + "<br>";
+	}
+	termOut = document.getElementById("timeValIn");
+	termOut.innerHTML = toInsert;
 }
 
 function fillMedian(term, termVals){
@@ -130,15 +130,17 @@ function fillMedian(term, termVals){
 
 function fillValues(term){
     termVals = JSON.parse(localStorage.getItem(term + "SessionVals"));
-    fillTime();
-    fillMedian(term, termVals);
-    toInsert = termVals[1] + "<br>";
-    var i;
-    for(i = 2; i < termVals.length; i++){
+    if(termVals.length > 1){
+      fillTime();
+      fillMedian(term, termVals);
+      toInsert = termVals[1] + "<br>";
+      var i;
+      for(i = 2; i < termVals.length; i++){
     	toInsert = toInsert + termVals[i] + "<br>";
-    }
+      }
     termOut = document.getElementById(term + "ValIn");
     termOut.innerHTML = toInsert;
+  }
 }
 
 function getMedian(termVals){

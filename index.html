@@ -269,7 +269,12 @@ function calculateN(allTerms){
   var i;
   for (i = 0; i < allTerms.length; i++){
     termVal = document.getElementById(allTerms[i] + "In").value;
-    N = N * termVal;
+    if(allTerms[i] === "L"){
+      N = N * logScale(termVal, 1, 10e7);
+    }
+    else{
+      N = N * termVal;
+    }
   }
   N = Math.round(N);
   localStorage.setItem("N", JSON.stringify(N));

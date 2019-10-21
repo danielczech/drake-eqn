@@ -109,7 +109,7 @@
  <p class = "smallNum"> <span id = "NeVal"> </span> </p>
  <div class = "slideContainer">
   <p>
-  <input type = "range" step = "0.01" min = "0" max = "10" value = "5" class = "slider" id = "NeIn">
+  <input type = "range" step = "0.01" min = "0" max = "5" value = "2.5" class = "slider" id = "NeIn">
   </p>
 </div>
 </div>
@@ -300,6 +300,9 @@ function submitTerms(){
   var i;
   for (i = 0; i < allTerms.length; i++){
     termVal = Number(document.getElementById(allTerms[i] + "In").value);
+    if(allTerms[i] === "L"){
+      termVal = Math.round(logScale(termVal, 1, 10e7));
+    }    
     localStorage.setItem(allTerms[i] + "Val", JSON.stringify(termVal));
     saveTermVals(allTerms[i], termVal);
   }

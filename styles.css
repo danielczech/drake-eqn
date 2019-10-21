@@ -2,10 +2,15 @@
   --main-green: #4AF02B;
   --bg-green: #42592E;
   --general: white;
-  --bg-general: #505050;
+  --bg-general: #808080;
   --neutral: #6BCAFA;
   --optimistic: #A3E879;
   --doubtful: #F76248;
+}
+
+body {
+	/*Image from: https://www.spacetelescope.org/images/heic0602a/*/
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("bg.jpg");
 }
 
 h1{
@@ -190,11 +195,11 @@ p{
     align-items: center;
 	-webkit-appearance: none;
 	width: 300%;
-	height: 10px;
+	height: 15px;
 	border-radius: 8px;
 	background: var(--bg-general);
 	outline: none;
-	opacity: 0.5;
+	opacity: 0.4;
 	-webkit-transition: .2s;
 	transition: opacity .2s;
 }

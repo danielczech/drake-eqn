@@ -120,6 +120,10 @@
    </div>
  </div>
 
+ <div class = "centreButton">
+  <button type = "button" onclick = "javascript:back()" id = "submit">Back</button> 
+</div>
+
  <script>
 
   function showValue(term){
@@ -143,6 +147,10 @@
       output = "greater than".fontcolor("#A3E879"); //#4AF02B
     } 
     return output;
+  }
+
+  function back(){
+    window.location.href = "index.html";
   }
 
   N = JSON.parse(localStorage.getItem("N"));

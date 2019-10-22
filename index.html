@@ -168,6 +168,7 @@
 <div class = "sideContainer">
 <p class = "smallText">
  <button type = "button" onclick = "javascript:submitTerms()" id = "submit">Submit!</button> 
+ <button type = "button" onclick = "javascript:ilbeHome()" id = "submit">Home</button> 
  <!-- Uncomment to enable a button to view recorded local session data -->
  <!-- <button type = "button" onclick = "javascript:sessionStats()" id = "submit">Session</button>  -->
 </p>
@@ -284,6 +285,10 @@ function calculateN(allTerms){
 
 function sessionStats(){
   window.location.href = "session.html";
+}
+
+function ilbeHome(){
+  window.location.href = "https://www.ilbe2019.com/activities";
 }
 
 function saveTermVals(term, val){

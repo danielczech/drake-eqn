@@ -11,6 +11,10 @@
 body {
 	/*Image from: https://www.spacetelescope.org/images/heic0602a/*/
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("bg.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 h1{

@@ -324,7 +324,7 @@ function pad(n){
 function getNow(){
   var now = new Date();
   yyyy = now.getFullYear();
-  mm = pad(now.getMonth());
+  mm = pad(now.getMonth() + 1);
   dd = pad(now.getDate());
   hr = pad(now.getHours());
   min = pad(now.getMinutes());

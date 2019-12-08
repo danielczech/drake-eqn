@@ -12,7 +12,7 @@
 
 body {
 	/*Image from: https://www.spacetelescope.org*/
-    background: linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)), url("heic0719a.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.77), rgba(0, 0, 0, 0.77)), url("heic0719a.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

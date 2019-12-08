@@ -1,3 +1,5 @@
+<!-- MIT licence (see licence.txt). D Czech 2019. -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,10 +9,7 @@
 </head>
 <body bgcolor = "black">
   <h1>Your selection predicts <span class = "largeNum">N = <span id = "NCivs"></span> </span>civilisations</h1>
-
-  <div class maincontainer>
-    <div class = "sideContainer" id = "Rstar">
-    </div>
+  <div class = "mainContainer">
     <div class = "sideContainer">
      <p class= "largeTerm"> <i>R<sub>*</sub></i> </p>
    </div>
@@ -24,9 +23,7 @@
   </div>
 </div>
 
-<div class maincontainer>
-  <div class = "sideContainer" id = "Fp">
-  </div>
+<div class  = "mainContainer">
   <div class = "sideContainer">
    <p class = "largeTerm"> <i>f<sub>p</sub></i> </p>
  </div>
@@ -40,9 +37,7 @@
 </div>
 </div>
 
-<div class maincontainer>
-  <div class = "sideContainer" id = "Ne">
-  </div>
+<div class  = "mainContainer">
   <div class = "sideContainer">
    <p class = "largeTerm"> <i>n<sub>e</sub></i> </p>
  </div>
@@ -56,9 +51,7 @@
 </div>
 </div>
 
-<div class maincontainer>
-  <div class = "sideContainer" id = "Fl">
-  </div>
+<div class  = "mainContainer">
   <div class = "sideContainer">
    <p class = "largeTerm"> <i>f<sub>l</sub></i> </p>
  </div>
@@ -66,15 +59,13 @@
    <p class = "resultFont"><span id = "FlResult"></span></p>
  </div>
  <div class = "textContainer">
-   <p class = "textFont"> Life arose on Earth at around the same time as favourable conditions arose. If evidence of life were to be found on other bodies in the solar system, this might imply a value close to 1. Your selection is
+   <p class = "textFont"> Life arose on Earth at around the same time as favourable conditions arose. If evidence of life were to be found on other bodies in the solar system, some believe that this could imply a value close to 1. Your selection is
      <span class = "lhFont" id = "FlLikelihood"></span> current estimates.
    </p>
  </div>
 </div>
 
-<div class maincontainer>
-  <div class ="sideContainer" id = "Fi">
-  </div>
+<div class  = "mainContainer">
   <div class ="sideContainer">
    <p class="largeTerm"> <i>f<sub>i</sub></i> </p>
  </div>
@@ -88,9 +79,7 @@
  </div>
 </div>
 
-<div class maincontainer>
-  <div class = "sideContainer" id = "Fc">
-  </div>
+<div class  = "mainContainer">
   <div class = "sideContainer">
    <p class = "largeTerm"> <i>f<sub>c</sub></i> </p>
  </div>
@@ -104,9 +93,7 @@
  </div>
 </div>
 
-<div class maincontainer>
-  <div class = "sideContainer" id = "L">
-  </div>
+<div class  = "mainContainer">
   <div class = "sideContainer">
    <p class = "largeTerm"> <i>L<sub></sub></i> </p>
  </div>
@@ -121,10 +108,15 @@
  </div>
 
  <div class = "centreButton">
-  <button type = "button" onclick = "javascript:back()" id = "submit">Back</button> 
+  <button type = "button" onclick = "javascript:back()" id = "submit">Back to Equation</button> 
+  <button type = "button" onclick = "javascript:sessionStats()" id = "submit">Session</button>
 </div>
 
  <script>
+
+  function sessionStats(){
+    window.location.href = "session.html";
+  }
 
   function showValue(term){
     termVal = JSON.parse(localStorage.getItem(term + "Val"));

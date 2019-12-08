@@ -1,115 +1,119 @@
+<!-- MIT licence (see licence.txt). D Czech 2019. -->
+
 <!DOCTYPE html>
 <html>
 <head>
-   <meta charset = "UTF-8">
+  <meta charset = "UTF-8">
   <meta name = "viewport" content = "width = device-width, initial-scale = 1">
   <link rel = "stylesheet" href = "styles.css">
 </head>
 <body bgcolor = "black">
 	<h1>Local session data:</h1>
-
-<div class = "mainContainer">
-    <div class = "timeContainer">
-       <p class = "largeNum"> <br></p>
-       <p class = "medianParA">
-          Median: <br>
-       </p>
-       <p class = "timePar">
-          <span id = "timeValIn"></span>
-       </p>
-   </div>
-
-    <div class = "term">
-       <p class = "largeNum"> N<sub></sub>
-       </p>
-       <p class = "medianParB">
-          <span id = "NMedianIn"></span>
-       </p>
-       <p class = "statsPar">
-          <span id = "NValIn"></span>
-       </p>
-   </div>
-
-    <div class = "term">
-       <p class = "largeNum"> R<sub>*</sub>
-       </p>
-       <p class = "medianParB">
-          <span id = "RstarMedianIn"></span>
-       </p>
-       <p class = "statsPar">
-          <span id = "RstarValIn"></span>
-       </p>
-   </div>
-
-    <div class = "term">
-       <p class = "largeNum"> f<sub>p</sub>
-       </p>
-       <p class = "medianParB">
-          <span id = "FpMedianIn"></span>
-       </p>
-       <p class = "statsPar">
-          <span id = "FpValIn"></span>
-       </p>
-   </div>
-
-    <div class = "term">
-       <p class = "largeNum"> n<sub>e</sub>
-       </p>
-       <p class = "medianParB">
-          <span id = "NeMedianIn"></span>
-       </p>
-       <p class = "statsPar">
-          <span id = "NeValIn"></span>
-       </p>
-   </div>
-
-    <div class = "term">
-       <p class = "largeNum"> f<sub>l</sub>
-       </p>
-       <p class = "medianParB">
-          <span id = "FlMedianIn"></span>
-       </p>
-       <p class = "statsPar">
-          <span id = "FlValIn"></span>
-       </p>
-   </div>
-
-    <div class = "term">
-       <p class = "largeNum"> f<sub>i</sub>
-       </p>
-       <p class = "medianParB">
-          <span id = "FiMedianIn"></span>
-       </p>
-       <p class = "statsPar">
-          <span id = "FiValIn"></span>
-       </p>
-   </div>
-
-    <div class = "term">
-       <p class = "largeNum"> f<sub>c</sub>
-       </p>
-       <p class = "medianParB">
-          <span id = "FcMedianIn"></span>
-       </p>
-       <p class = "statsPar">
-          <span id = "FcValIn"></span>
-       </p>
-   </div>
-
-    <div class = "term">
-       <p class = "largeNum"> L<sub></sub>
-       </p>
-       <p class = "medianParB">
-          <span id = "LMedianIn"></span>
-       </p>
-       <p class = "statsPar">
-          <span id = "LValIn"></span>
-       </p>
-   </div>
-
+<div class = "centreButton">
+  <button type = "button" onclick = "javascript:back()" id = "submit">Back to Equation</button> 
+  <button type = "button" onclick = "javascript:result()" id = "submit">Back to Result</button>
 </div>
 
+<table style="width:90%" align="center">
+  <tr class = "largeNum" align = "center">
+    <td>
+    </td>
+    <td>
+      N
+    </td>
+    <td>
+      R<sub>*</sub>
+    </td>
+    <td>
+      f<sub>p</sub>
+    </td>
+    <td>
+      n<sub>e</sub>
+    </td>
+    <td>
+      f<sub>l</sub>
+    </td>
+    <td>
+     f<sub>i</sub>
+    </td>
+    <td>
+     f<sub>c</sub>
+    </td>
+    <td>
+      L
+    </td>
+  </tr>
+
+  <tr class = "smallText" align = "center">
+    <td align = "right">
+      Median: 
+    </td>
+    <td>
+      <span id = "NMedianIn"></span>
+    </td>
+    <td>
+      <span id = "RstarMedianIn"></span> 
+    </td>
+    <td>
+      <span id = "FpMedianIn"></span>
+    </td>
+    <td>
+      <span id = "NeMedianIn"></span>
+    </td>
+    <td>
+      <span id = "FlMedianIn"></span>
+    </td>
+    <td>
+      <span id = "FiMedianIn"></span>
+    </td>
+    <td>
+      <span id = "FcMedianIn"></span>
+    </td>
+    <td>
+      <span id = "LMedianIn"></span>
+    </td>
+  </tr>
+
+  <tr class = "smallText" align = "center">
+    <td align = "right">
+      <span id = "timeValIn"></span>
+    </td>
+    <td>
+      <span id = "NValIn"></span>
+    </td>
+    <td>
+      <span id = "RstarValIn"></span>
+    </td>
+    <td>
+      <span id = "FpValIn"></span>
+    </td>
+    <td>
+      <span id = "NeValIn"></span>
+    </td>
+    <td>
+      <span id = "FlValIn"></span>
+    </td>
+    <td>
+      <span id = "FiValIn"></span>
+    </td>
+    <td>
+      <span id = "FcValIn"></span>
+    </td>
+    <td>
+      <span id = "LValIn"></span>
+    </td>
+  </tr>
+</table>
+
 <script>
+
+function result(){
+  window.location.href = "result.html";
+}
+
+function back(){
+  window.location.href = "index.html";
+}
 
 function fillTime(){
 	timeVals = JSON.parse(localStorage.getItem("timeSessionVals"));

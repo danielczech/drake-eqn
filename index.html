@@ -1,3 +1,5 @@
+<!-- MIT licence (see licence.txt). D Czech 2019. -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,7 +64,6 @@
       display: block;
     }
   </style>
-
 </head>
 
 <h2> The Drake Equation: </h2>
@@ -168,7 +169,7 @@
 <div class = "sideContainer">
 <p class = "smallText">
  <button type = "button" onclick = "javascript:submitTerms()" id = "submit">Submit!</button> 
- <button type = "button" onclick = "javascript:ilbeHome()" id = "submit">Home</button> 
+ <!--  <button type = "button" onclick = "javascript:ilbeHome()" id = "submit">Home</button> --> 
  <!-- Uncomment to enable a button to view recorded local session data -->
  <!-- <button type = "button" onclick = "javascript:sessionStats()" id = "submit">Session</button>  -->
 </p>
@@ -226,6 +227,19 @@
 </div>
 </div>
 
+<div class = "atts">
+  <img src="breakthrough-listen-dark-transparent-background.png" style="margin:2%; width:10%; display:inline-block;" />
+  <img src="BSRClogo.png" style="margin:2%; width:13%; display:inline-block;" />
+</div>
+
+<div class = "footer">
+  <par class = "finePrint">
+    <a href="https://github.com/danielczech">Daniel Czech</a>, 
+    <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, 
+    Background: <a href="https://www.spacetelescope.org/images/heic0719a/">NASA, ESA </a> 
+  </par>
+</div>
+
 <script>
 
   function updateEqn(term, allTerms){
@@ -257,7 +271,7 @@ function logScale(inputVal, lowVal, highVal){
   // Outputs a log scale from lowVal to highVal
   // for a linear input.
   // lowVal and highVal may not be 0.
-  // We assume 0 <= inputVal <= 100.
+  // Assuming 0 <= inputVal <= 100.
   var lowScale = Math.log(lowVal);
   var highScale = Math.log(highVal);
   var scaleRange = (highScale - lowScale)/100.0 

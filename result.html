@@ -1,164 +1,112 @@
 <!-- MIT licence (see licence.txt). D Czech 2019. -->
 
 <!DOCTYPE html>
+
 <html>
-<head>
-   <meta charset = "UTF-8">
-  <meta name = "viewport" content = "width = device-width, initial-scale = 1">
-  <link rel = "stylesheet" href = "styles.css">
-</head>
-<body bgcolor = "black">
-  <h1>Your selection predicts <span class = "largeNum">N = <span id = "NCivs"></span> </span>civilisations</h1>
-  <div class = "mainContainer">
-    <div class = "sideContainer">
-     <p class= "largeTerm"> <i>R<sub>*</sub></i> </p>
-   </div>
-   <div class = "resultContainer">
-     <p class= "resultFont"> <span id = "RstarResult"></span> </p>
-   </div>
-   <div class = "textContainer">
-     <p class= "textFont"> Current estimates are 1.5 to 3 stars per year; the original estimate was 1 star per year. Your selection is
-      <span class = "lhFont" id = "RstarLikelihood"></span> current estimates.
-    </p>
-  </div>
-</div>
 
-<div class  = "mainContainer">
-  <div class = "sideContainer">
-   <p class = "largeTerm"> <i>f<sub>p</sub></i> </p>
- </div>
- <div class = "resultContainer">
-   <p class = "resultFont"><span id = "FpResult"></span></p>
- </div>
- <div class = "textContainer">
-   <p class = "textFont"> It is now believed that nearly all stars have planets. Therefore, this value is believed to be close to 1. Your selection is
-    <span class = "lhFont" id = "FpLikelihood"></span> current estimates.
-  </p>
-</div>
-</div>
+  <head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <link rel = "stylesheet" href = "css/styles.css">
+    <script type="text/javascript" src="js/result.js"></script>
+  </head>
 
-<div class  = "mainContainer">
-  <div class = "sideContainer">
-   <p class = "largeTerm"> <i>n<sub>e</sub></i> </p>
- </div>
- <div class = "resultContainer">
-   <p class = "resultFont"><span id = "NeResult"></span></p>
- </div>
- <div class = "textContainer">
-   <p class = "textFont"> One recent estimate placed <span class = "generalTerm"> f<sub>p</sub> · n<sub>e</sub></span> near 0.4 (the original estimate was 3 < <span class = "generalTerm">n<sub>e</sub></span> < 5). Your selection is 
-    <span class = "lhFont" id = "NeLikelihood"></span> current estimates.
-  </p>
-</div>
-</div>
+<h1>Your selection predicts <span class = "setColour">N = <span id = "NCivs"></span> </span>civilisations</h1>
 
-<div class  = "mainContainer">
-  <div class = "sideContainer">
-   <p class = "largeTerm"> <i>f<sub>l</sub></i> </p>
- </div>
- <div class = "resultContainer">
-   <p class = "resultFont"><span id = "FlResult"></span></p>
- </div>
- <div class = "textContainer">
-   <p class = "textFont"> Life arose on Earth at around the same time as favourable conditions arose. If evidence of life were to be found on other bodies in the solar system, some believe that this could imply a value close to 1. Your selection is
-     <span class = "lhFont" id = "FlLikelihood"></span> current estimates.
-   </p>
- </div>
-</div>
+  <body bgcolor = "black" onload = "initSession()">
 
-<div class  = "mainContainer">
-  <div class ="sideContainer">
-   <p class="largeTerm"> <i>f<sub>i</sub></i> </p>
- </div>
- <div class ="resultContainer">
-   <p class="resultFont"><span id = "FiResult"></span></p>
- </div>
- <div class = "textContainer">
-   <p class = "textFont"> A consensus has not been reached. Some advocate for a low value, arguing that so far, only one species on Earth is known to have reached a high level of intelligence. Others favour a high value. Your selection is
-     <span class = "lhFont" id = "FiLikelihood"></span> current estimates.
-   </p>
- </div>
-</div>
+    <table class = "result" align="center">
 
-<div class  = "mainContainer">
-  <div class = "sideContainer">
-   <p class = "largeTerm"> <i>f<sub>c</sub></i> </p>
- </div>
- <div class = "resultContainer">
-   <p class = "resultFont"><span id = "FcResult"></span></p>
- </div>
- <div class = "textContainer">
-   <p class = "textFont"> This value is also speculative. While we ourselves do not make many deliberate attempts at broadcasting our presence, we nevertheless would be considered communicative due to our radio leakage. Your selection is
-     <span class = "lhFont" id = "FcLikelihood"></span> current estimates.
-   </p>
- </div>
-</div>
+      <tr align = "center">
+        <td class = "largeTerm">
+          R<sub>*</sub> 
+        </td>
+        <td class = "resultNum">
+          <span id = "RstarResult"></span>
+        </td>
+        <td class = "smallText">
+          Current estimates are 1.5 to 3 stars per year; the original estimate was 1 star per year. Your selection is <span id = "RstarLikelihood"></span> current estimates.
+        </td>
+      </tr>
+      
+      <tr>
+        <td class = "largeTerm">
+          <i>f<sub>p</sub></i> 
+        </td>
+        <td class = "resultNum">
+          <span id = "FpResult"></span>
+        </td>
+        <td class = "smallText">
+          It is now believed that nearly all stars have planets. Therefore, this value is believed to be close to 1. Your selection is <span id = "FpLikelihood"></span> current estimates.
+        </td>
+      </tr>
 
-<div class  = "mainContainer">
-  <div class = "sideContainer">
-   <p class = "largeTerm"> <i>L<sub></sub></i> </p>
- </div>
- <div class = "resultContainer">
-   <p class = "resultFont"><span id = "LResult"></span></p>
- </div>
- <div class = "textContainer">
-   <p class = "textFont"> Some have argued that highly advanced civilisations may be able to overcome all threats to their survival, implying a large value. Others suggest a much lower value, considering the typical lifespan of civilisations on Earth. Your selection is
-     <span class = "lhFont" id = "LLikelihood"></span> current estimates.
-   </p> 
-   </div>
- </div>
+      <tr>
+        <td class = "largeTerm">
+          <i>n<sub>e</sub></i> 
+        </td>
+        <td class = "resultNum">
+          <span id = "NeResult"></span>
+        </td>
+        <td class = "smallText">
+          One recent estimate placed f<sub>p</sub> · n<sub>e</sub> near 0.4 (the original estimate was 3 < n<sub>e</sub> < 5). Your selection is <span id = "NeLikelihood"></span> current estimates.
+        </td>
+      </tr>
 
- <div class = "centreButton">
-  <button type = "button" onclick = "javascript:back()" id = "submit">Back to Equation</button> 
-  <button type = "button" onclick = "javascript:sessionStats()" id = "submit">Session</button>
-</div>
+      <tr>
+        <td class = "largeTerm">
+          <i>f<sub>l</sub></i> 
+        </td>
+        <td class = "resultNum">
+          <span id = "FlResult"></span>
+        </td>
+        <td class = "smallText">
+          Life arose on Earth at around the same time as favourable conditions arose. If evidence of life were to be found on other bodies in the solar system, some believe that this could imply a value close to 1. Your selection is <span id = "FlLikelihood"></span> current estimates.
+        </td>
+      </tr>
 
- <script>
+      <tr>
+        <td class = "largeTerm">
+          <i>f<sub>i</sub></i> 
+        </td>
+        <td class = "resultNum">
+          <span id = "FiResult"></span>
+        </td>
+        <td class = "smallText">
+          A consensus has not been reached. Some advocate for a low value, arguing that so far, only one species on Earth is known to have reached a high level of intelligence. Others favour a high value. Your selection is <span id = "FiLikelihood"></span> current estimates.
+        </td>
+      </tr>
 
-  function sessionStats(){
-    window.location.href = "session.html";
-  }
+      <tr>
+        <td class = "largeTerm">
+          <i>f<sub>c</sub></i> 
+        </td>
+        <td class = "resultNum">
+          <span id = "FcResult"></span>
+        </td>
+        <td class = "smallText">
+          This value is also speculative. While we ourselves do not make many deliberate attempts at broadcasting our presence, we nevertheless would be considered communicative due to our radio leakage. Your selection is <span id = "FcLikelihood"></span> current estimates.
+        </td>
+      </tr>
 
-  function showValue(term){
-    termVal = JSON.parse(localStorage.getItem(term + "Val"));
-    termShow = document.getElementById(term + "Result");
-    termShow.innerHTML = termVal;
-  }
+      <tr>
+        <td class = "largeTerm">
+          <i>L<sub></sub></i> 
+        </td>
+        <td class = "resultNum">
+          <span id = "LResult"></span>
+        </td>
+        <td class = "smallText">
+          Some have argued that highly advanced civilisations may be able to overcome all threats to their survival, implying a large value. Others suggest a much lower value, considering the typical lifespan of civilisations on Earth. Your selection is <span id = "LLikelihood"></span> current estimates.
+        </td>
+      </tr>
 
-  function showLikelihood(term, minVal, maxVal){
-    termVal = JSON.parse(localStorage.getItem(term + "Val"));
-    termLikelihood = document.getElementById(term + "Likelihood");
-    termLikelihood.innerHTML = checkLikelihood(Number(termVal), minVal, maxVal);
-  }
+    </table>
 
-  function checkLikelihood(userVal, min, max){
-    var output = "within the region of".fontcolor("#6BCAFA"); //#6AD1E3
-    if(userVal < min){
-      output = "less than".fontcolor("#F76248"); //#F44934
-    }
-    else if(userVal > max){
-      output = "greater than".fontcolor("#A3E879"); //#4AF02B
-    } 
-    return output;
-  }
+    <div class = "center">
+      <button type = "button" class = "button-main" onclick = "javascript:back()" id = "submit">Back to Equation</button> 
+      <button type = "button" class = "button-main" onclick = "javascript:sessionStats()" id = "submit">Session</button>
+    </div> 
 
-  function back(){
-    window.location.href = "index.html";
-  }
-
-  N = JSON.parse(localStorage.getItem("N"));
-  NShow = document.getElementById("NCivs");
-  NShow.innerHTML = N;
-
-  allTerms = JSON.parse(localStorage.getItem("allTerms"));
-  allTerms.forEach(showValue);
-
-  var min = [1.5, 0.8, 0.19, 0.1, 0.1, 0.1, 304];
-  var max = [3,   1,   3, 0.9, 0.9, 0.9, 1000000];
-  var i = 0;
-  for(i = 0; i < allTerms.length; i++){
-    showLikelihood(allTerms[i], min[i], max[i]);
-  }
-
-</script>
-</body>
+  </body>
 </html>

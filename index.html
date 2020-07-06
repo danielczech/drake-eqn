@@ -1,385 +1,221 @@
 <!-- MIT licence (see licence.txt). D Czech 2019. -->
 
 <!DOCTYPE html>
+
 <html>
-<head>
-  <meta charset = "UTF-8">
-  <meta name = "viewport" content = "width = device-width, initial-scale = 1">
-  <link rel = "stylesheet" href = "styles.css">
-  <style>
 
-    #RstarInfo{
-      display: none;
-    }
-    #Rstar:hover ~#RstarInfo{
-      display: block;
-    }
+  <head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <link rel = "stylesheet" href = "css/styles.css">
+    <script type="text/javascript" src="js/index.js"></script>
+  </head>
 
-    #NInfo{
-      display: none;
-    }
-    #N:hover ~#NInfo{
-      display: block;
-    }
+  <h2> The Drake Equation: </h2>
+  <h1> Choose Your Own Values</h1>
+  
+  <body bgcolor = "black" onload = "initSession()">
+    <table class = "full" align="center">
+      <tr class = "largeTerm" align = "center">
+        <td id = "N">
+          N<sub></sub> 
+        </td>
+        <td>
+          =
+        </td>
+        <td>
+          R<sub>*</sub>
+        </td>
+        <td>
+          &#8729;
+        </td>
+        <td>
+          f<sub>p</sub>
+        </td>
+        <td>
+          &#8729;
+        </td>
+        <td>
+          n<sub>e</sub>
+        </td>
+        <td>
+          &#8729;
+        </td>
+        <td>
+          f<sub>l</sub>
+        </td>
+        <td>
+          &#8729;
+        </td>
+        <td>
+          f<sub>i</sub>
+        </td>
+        <td>
+          &#8729;
+        </td>
+        <td>
+          f<sub>c</sub>
+        </td>
+        <td>
+          &#8729;
+        </td>
+        <td>
+          L
+        </td>
+        <td>
+        </td>
+        <td>
+          <button type = "button" class = "button-main" onclick = "javascript:submitTerms()">Submit!</button> 
+        </td>
+      </tr>
+  
+      <tr class = "largeNum" align = "center">
+        <td>
+          <span id = "NVal"></span> 
+        </td>
+        <td>
+        </td>
+        <td>
+          <span id = "RstarVal"></span> 
+          <div id = "Rstar" class = "slideContainer">
+            <input type = "range" step = "0.1" min = "0" max = "10" value = "5" class = "slider" id = "RstarIn">
+          </div>
+        </td>
+        <td>
+        </td>
+        <td>
+          <span id = "FpVal"></span>
+            <div id = "Fp" class = "slideContainer">
+              <input type = "range" step = "0.01" min = "0" max = "1" value = "0.5" class = "slider" id = "FpIn">
+            </div>
+        </td>
+        <td>
+        </td>
+        <td>
+          <span id = "NeVal"></span>
+            <div id = "Ne" class = "slideContainer">
+              <input type = "range" step = "0.01" min = "0" max = "5" value = "2.5" class = "slider" id = "NeIn">
+            </div>    
+        </td>
+        <td>
+        </td>
+        <td>
+          <span id = "FlVal"></span>
+            <div id = "Fl" class = "slideContainer">
+              <input type = "range" step = "0.01" min = "0" max = "1" value = "0.5" class = "slider" id = "FlIn">
+            </div>
+        </td>
+        <td>
+        </td>
+        <td>
+          <span id = "FiVal"></span>
+            <div id = "Fi" class = "slideContainer">
+              <input type = "range" step = "0.01" min = "0" max = "1" value = "0.5" class = "slider" id = "FiIn">
+            </div>
+        </td>
+        <td>
+        </td>
+        <td>
+          <span id = "FcVal"></span>
+            <div id = "Fc" class = "slideContainer">
+              <input type = "range" step = "0.01" min = "0" max = "1" value = "0.5" class = "slider" id = "FcIn">
+            </div>
+        </td>
+        <td>
+        </td>
+        <td>
+          <span id = "LVal"></span>
+            <div id = "L" class = "slideContainer">
+              <input type = "range" step = "0.5" min = "1" max = "100" value = "50" class = "slider" id = "LIn">
+            </div>
+        </td>
+        <td>
+        </td>    
+        <td>
+        </td>
+      </tr>
+    </table>
 
-    #FpInfo{
-      display: none;
-    }
-    #Fp:hover ~#FpInfo{
-      display: block;
-    }
+    <div class = "info">
+      <div id = "NInfo" style = "display:none">
+        <p class = "smallText">
+          N: The number of civilisations in our galaxy with which communication might be possible.
+        </p>
+      </div>
 
-    #NeInfo{
-      display: none;
-    }
-    #Ne:hover ~#NeInfo{
-      display: block;
-    }
+	  <div id = "RstarInfo" style = "display:none">
+	    <p class = "smallText">
+	      R<sub>*</sub>: The average rate of star formation in our galaxy.
+	    </p>
+	  </div>
 
-    #FlInfo{
-      display: none;
-    }
-    #Fl:hover ~#FlInfo{
-      display: block;
-    }
+	  <div id = "FpInfo" style = "display:none">
+	    <p class = "smallText">
+	      f<sub>p</sub>: The fraction of stars which have planets.
+	    </p>
+	  </div>
 
-    #FiInfo{
-      display: none;
-    }
-    #Fi:hover ~#FiInfo{
-      display: block;
-    }
+	  <div id = "NeInfo" style = "display:none">
+	    <p class = "smallText">
+	      n<sub>e</sub>: The average number of potentially life-supporting planets per star which has planets.
+	    </p>
+	  </div>
 
-    #FcInfo{
-      display: none;
-    }
-    #Fc:hover ~#FcInfo{
-      display: block;
-    }
+	  <div id = "FlInfo" style = "display:none">
+	    <p class = "smallText">
+	      f<sub>l</sub>: The fraction of potentially life-supporting planets on which life does arise.
+	    </p>
+	  </div>
 
-    #LInfo{
-      display: none;
-    }
-    #L:hover ~#LInfo{
-      display: block;
-    }
-  </style>
-</head>
+	  <div id = "FiInfo" style = "display:none">
+	    <p class = "smallText">
+	      f<sub>i</sub>: The fraction of life-hosting planets on which intelligent life arises.
+	    </p>
+	  </div>
 
-<h2> The Drake Equation: </h2>
-<h1> Choose Your Own Values</h1>
+	  <div id = "FcInfo" style = "display:none">
+	    <p class = "smallText">
+	      f<sub>c</sub>: The fraction of civilisations which exhibit a detectable technosignature.
+	    </p>
+	  </div>
 
-<body bgcolor = "black">
+	  <div id = "LInfo" style = "display:none">
+	    <p class = "smallText">
+	      L: The length of time for which intelligent civilisations exhibit a detectable technosignature.
+	    </p>
+	  </div>
+    </div>
 
-  <div class = "mainContainer">
-    <div class ="sideContainer" id = "N">
-     <p class = "largeTerm"> N <sub></sub></p>
-     <p class = "smallNum"><span id = "Nval"></span></p>
-   </div>
+    <div class = "logos">
+      <table class = "footer" align = "center">
+        <tr align = "center">
+          <td>
+            <a href="https://breakthroughinitiatives.org/initiative/1">
+          	  <img src="img/breakthrough-listen-dark-transparent-background.png" style="margin:2%; width:70%;" />
+            </a>
+          </td>	
+          <td>
+            <a href="https://seti.berkeley.edu">
+          	  <img src="img/BSRClogo.png" style="margin:2%; width:70%;" />
+            </a>
+          </td>	
+        </tr>
+      </table>
+    </div>
 
-   <div class ="term">
-     <p class = "largeTerm"> = </p>
-   </div>
+    <div class = "links">
+      <par class = "finePrint">
+        <a href="https://github.com/danielczech">
+          D Czech,
+        </a> 
+        <a href="http://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0,
+        </a>
+        <a href="https://www.spacetelescope.org/images/heic0719a/">
+          Background: NASA, ESA 
+        </a> 
+      </par>
+    </div>
 
-   <div id = "Rstar" class = "term">
-     <p class = "largeTerm"> R<sub>*</sub></p>
-       <p class = "smallNum">  <span id = "RstarVal"></span> </p>
-     <div class = "slideContainer">
-       <input type = "range" step = "0.1" min = "0" max = "10" value = "5" class = "slider" id = "RstarIn">
-     </div>
-   </div>
-
-   <div class = "dot">
-    <p class = "largeTerm"> · </p>
-  </div>
-
-  <div class = "term" id = "Fp">
-   <p class = "largeTerm"> f<sub>p</sub> </p>
-   <p class = "smallNum"> <span id = "FpVal"> </span> </p>
-   <div class = "slideContainer">
-     <input type = "range" step = "0.01" min = "0" max = "1" value = "0.5" class = "slider" id = "FpIn">
-   </div>
- </div>
-
- <div class = "dot">
-  <p class = "largeTerm"> · </p>
-</div>
-
-<div class = "term" id = "Ne">
- <p class = "largeTerm"> n<sub>e</sub> </p>
- <p class = "smallNum"> <span id = "NeVal"> </span> </p>
- <div class = "slideContainer">
-  <p>
-  <input type = "range" step = "0.01" min = "0" max = "5" value = "2.5" class = "slider" id = "NeIn">
-  </p>
-</div>
-</div>
-
-<div class = "dot">
-  <p class = "largeTerm"> · </p>
-</div>
-
-<div class = "term" id = "Fl">
- <p class = "largeTerm"> f<sub>l</sub> </p>
- <p class = "smallNum"> <span id = "FlVal"> </span> </p>
- <div class = "slideContainer">
-  <input type = "range" step = "0.01" min = "0" max = "1" value = "0.5" class = "slider" id = "FlIn">
-</div>
-</div>
-
-<div class = "dot">
-  <p class = "largeTerm"> · </p>
-</div>
-
-<div class = "term" id = "Fi">
- <p class = "largeTerm"> f<sub>i</sub> </p>
- <p class = "smallNum"> <span id = "FiVal"> </span> </p>
- <div class = "slideContainer">
-  <input type = "range" step = "0.01" min = "0" max = "1" value = "0.5" class = "slider" id = "FiIn">
-</div>
-</div>
-
-<div class = "dot">
-  <p class = "largeTerm"> · </p>
-</div>
-
-<div class = "term" id = "Fc">
- <p class = "largeTerm"> f<sub>c</sub> </p>
- <p class = "smallNum"> <span id = "FcVal"> </span> </p>
- <div class = "slideContainer">
-  <input type = "range" step = "0.01" min = "0" max = "1" value = "0.5" class = "slider" id = "FcIn">
-</div>
-</div>
-
-<div class = "dot">
-  <p class = "largeTerm"> · </p>
-</div>
-
-<div class = "term" id = "L">
- <p class = "largeTerm"> L<sub> </sub> </p>
-<p class = "smallNum"> <span id = "LVal"> </span> </p>
- <div class = "slideContainer">
-  <input type = "range" step = "0.5" min = "1" max = "100" value = "50" class = "slider" id = "LIn">
-</div>
-</div>
-
-<div class = "dot">
-</div>
-
-<div class = "sideContainer">
-<p class = "smallText">
- <button type = "button" onclick = "javascript:submitTerms()" id = "submit">Submit!</button> 
- <!--  <button type = "button" onclick = "javascript:ilbeHome()" id = "submit">Home</button> --> 
- <!-- Uncomment to enable a button to view recorded local session data -->
- <!-- <button type = "button" onclick = "javascript:sessionStats()" id = "submit">Session</button>  -->
-</p>
-</div>
-
-<div class = "dot">
-</div>
-
-<div id = "NInfo">
-  <p class = "smallText">
-    <span class = "generalTerm">N</span>: The number of civilisations in our galaxy with which communication might be possible.
-  </p>
-</div>
-
-<div id = "RstarInfo">
-  <p class = "smallText">
-    <span class = "generalTerm">R<sub>*</sub></span>: The average rate of star formation in our galaxy.
-  </p>
-</div>
-
-<div id = "FpInfo">
-  <p class = "smallText">
-    <span class = "generalTerm">f<sub>p</sub></span>: The fraction of stars which have planets.
-  </p>
-</div>
-
-<div id = "NeInfo">
-  <p class = "smallText">
-    <span class = "generalTerm">n<sub>e</sub></span>: The average number of potentially life-supporting planets per star which has planets.
-  </p>
-</div>
-
-<div id = "FlInfo">
-  <p class = "smallText">
-    <span class = "generalTerm">f<sub>l</sub></span>: The fraction of potentially life-supporting planets on which life does arise.
-  </p>
-</div>
-
-<div id = "FiInfo">
-  <p class = "smallText">
-    <span class = "generalTerm">f<sub>i</sub></span>: The fraction of life-hosting planets on which intelligent life arises.
-  </p>
-</div>
-
-<div id = "FcInfo">
-  <p class = "smallText">
-    <span class = "generalTerm">f<sub>c</sub></span>: The fraction of civilisations which exhibit a detectable technosignature.
-  </p>
-</div>
-
-<div id = "LInfo">
-  <p class = "smallText">
-    <span class = "generalTerm">L</span>: The length of time for which intelligent civilisations exhibit a detectable technosignature.
-  </p>
-</div>
-</div>
-
-<div class = "atts">
-  <img src="breakthrough-listen-dark-transparent-background.png" style="margin:2%; width:10%; display:inline-block;" />
-  <img src="BSRClogo.png" style="margin:2%; width:13%; display:inline-block;" />
-</div>
-
-<div class = "footer">
-  <par class = "finePrint">
-    <a href="https://github.com/danielczech">Daniel Czech</a>, 
-    <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, 
-    Background: <a href="https://www.spacetelescope.org/images/heic0719a/">NASA, ESA </a> 
-  </par>
-</div>
-
-<script>
-
-  function updateEqn(term, allTerms){
-    var slider = document.getElementById(term + "In");
-    var output = document.getElementById(term + "Val");
-    output.innerHTML = slider.value;
-    if(term == "L"){
-      var LOutput = logScale(Number(slider.value), 1, 10e7);
-      output.innerText = Math.round(LOutput); 
-    }
-    else{
-      output.innerText = slider.value;
-    }
-    calculateN(allTerms);
-    slider.oninput = function(){
-      if(term == "L"){
-          // output.innerText = Number(this.value).toExponential(2);
-          var LOutput = logScale(Number(this.value), 1, 10e7);
-          output.innerText = Math.round(LOutput);
-      }
-      else{
-        output.innerText = this.value;
-      }
-      calculateN(allTerms);
-    }
-  }
-
-function logScale(inputVal, lowVal, highVal){
-  // Outputs a log scale from lowVal to highVal
-  // for a linear input.
-  // lowVal and highVal may not be 0.
-  // Assuming 0 <= inputVal <= 100.
-  var lowScale = Math.log(lowVal);
-  var highScale = Math.log(highVal);
-  var scaleRange = (highScale - lowScale)/100.0 
-  return Math.exp(inputVal*scaleRange)
-}
-
-function calculateN(allTerms){
-  var N = 1;
-  var i;
-  for (i = 0; i < allTerms.length; i++){
-    termVal = document.getElementById(allTerms[i] + "In").value;
-    if(allTerms[i] === "L"){
-      N = N * logScale(termVal, 1, 10e7);
-    }
-    else{
-      N = N * termVal;
-    }
-  }
-  N = Math.round(N);
-  localStorage.setItem("N", JSON.stringify(N));
-  //N = N.toExponential(3);
-  output = document.getElementById("Nval");
-  output.innerHTML = N;
-}
-
-function sessionStats(){
-  window.location.href = "session.html";
-}
-
-function ilbeHome(){
-  window.location.href = "https://www.ilbe2019.com/activities";
-}
-
-function saveTermVals(term, val){
-  termArr = JSON.parse(localStorage.getItem(term + "SessionVals"));
-  termArr[termArr.length] = val;
-  localStorage.setItem(term + "SessionVals", JSON.stringify(termArr));
-}
-
-function submitTerms(){
-  // Save N
-  N = JSON.parse(localStorage.getItem("N"));
-  saveTermVals("N", N);
-  // Save all term values
-  var i;
-  for (i = 0; i < allTerms.length; i++){
-    termVal = Number(document.getElementById(allTerms[i] + "In").value);
-    if(allTerms[i] === "L"){
-      termVal = Math.round(logScale(termVal, 1, 10e7));
-    }    
-    localStorage.setItem(allTerms[i] + "Val", JSON.stringify(termVal));
-    saveTermVals(allTerms[i], termVal);
-  }
-  // Save current time
-  time = getNow();
-  saveTermVals("time", time);
-  window.location.href = "result.html";
-}
-
-function pad(n){
-  return n<10 ? '0'+n : n;
-}
-
-function getNow(){
-  var now = new Date();
-  yyyy = now.getFullYear();
-  mm = pad(now.getMonth() + 1);
-  dd = pad(now.getDate());
-  hr = pad(now.getHours());
-  min = pad(now.getMinutes());
-  sec = pad(now.getSeconds());
-  var time = yyyy + '-' + mm +'-' + dd + ' ' + hr + ':' + min + ':' + sec;
-  return time;
-}
-
-function initSession(){
-  //Value of N
-  if(localStorage.getItem("NSessionVals") === null){
-    var NArr = ["N"];
-    localStorage.setItem("NSessionVals", JSON.stringify(NArr));
-  }
-  //Value of each term
-  var i;
-  for(i = 0; i <allTerms.length; i++){
-    termArrName = allTerms[i] + "SessionVals";
-    if(localStorage.getItem(termArrName) === null){
-      var termArr = [allTerms[i]];
-      localStorage.setItem(allTerms[i] + "SessionVals", JSON.stringify(termArr));
-    }
-  }
-  //Time
-  if(localStorage.getItem("timeSessionVals") === null){
-    timeArr = ["time"];
-    localStorage.setItem("timeSessionVals", JSON.stringify(timeArr));
-  }
-}
-
-var allTerms = ["Rstar", "Fp", "Ne", "Fl", "Fi", "Fc", "L"];
-localStorage.setItem("allTerms", JSON.stringify(allTerms));
-
-//Initialise 
-initSession();
-
-var i;
-for(i = 0; i < allTerms.length; i++){
-  updateEqn(allTerms[i], allTerms);
-}
-
-</script>
-</body>
+  </body>
 </html>

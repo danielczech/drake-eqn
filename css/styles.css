@@ -1,0 +1,291 @@
+:root{
+  --main-green: #4AF02B;
+  --bg-green: #42592E;
+  --general: white;
+  --bg-general: #808080;
+  --neutral: #6BCAFA;
+  --optimistic: #A3E879;
+  --doubtful: #F76248;
+}
+
+body {
+	/*Image from: https://www.spacetelescope.org*/
+    background: linear-gradient(rgba(0, 0, 0, 0.77), rgba(0, 0, 0, 0.77)), url("../img/heic0719a.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h1{
+	/*font-family: "Helvetica Neue", Helvetica, sans-serif;*/
+	font-family: "Lucida Console", Monaco, sans; 
+	text-align: center; 
+	color: var(--general);
+	margin-bottom: 1vh; 
+}
+
+h2{ 
+	font-family: "Lucida Console", Monaco, sans; 
+	text-align: center; 
+	color: var(--general);
+}
+
+/* Tables */
+
+table.full{
+  table-layout: fixed;
+  width: 85vw;
+}
+
+table.full td{
+  vertical-align: top;
+  text-align: center;
+  width: 5vw;
+  padding: 0; 
+  margin: 0;
+} 
+
+table.result{
+  table-layout: fixed;
+  width: 85vw;
+  padding-top: 1vw;
+}
+
+table.result td:nth-child(1){
+  text-align: center;
+  width: 7vw; 
+  margin: 0;
+  padding-bottom: 1vw;
+}
+
+table.result td:nth-child(2){
+  text-align: center;
+  width: 8vw; 
+  margin: 0;
+  padding-bottom: 1vw;
+  font-size: 2vw;
+}
+
+table.result td:nth-child(3){
+  text-align: left;
+  width: 70vw; 
+  margin: 0;
+  padding-bottom: 1vw;
+}
+
+table.footer{
+  table-layout: fixed;
+  width: 40vw;
+}
+
+table.footer td{
+  text-align: center;
+  width: 20vw;
+  padding: 0; 
+  margin: 0;
+}
+
+table.session{
+  table-layout: fixed;
+  width: 90vw;
+}
+
+table.session td:nth-child(1){
+  text-align: right;
+  width: 16vw;
+  padding: 0; 
+  margin: 0;
+}
+
+table.session td:nth-child(n+2){
+  text-align: center;
+  width: 9vw;
+  padding: 0; 
+  margin: 0;
+}
+
+
+/* Links */
+
+a:link {
+  color: var(--general);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--general);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--main-green);
+  text-decoration: none;
+}
+
+/* Buttons */
+
+.button-main{
+ 	background-color: Transparent;
+	font-family: "Lucida Console", Monaco, sans;
+	margin-bottom: 1vh;
+	margin-left: 1vh;
+	margin-right: 1vh;
+	padding: 1vh;
+	-moz-border-radius: 2vh;
+	-webkit-border-radius: 2vh;
+	border-radius: 2vh;
+	color: var(--general);
+	font-size: 2vh;
+	text-decoration: none;
+	border-color: var(--general);
+	border-style: solid;
+	border-width: small;
+}
+
+.button-main:hover{
+	color: var(--main-green);
+	border-color: var(--main-green);
+}
+
+.center{
+  margin: 2vw;
+  display: flex;
+  justify-content: center;
+}
+
+/* Fonts */
+
+.setColour{
+  color: var(--main-green);
+}
+
+.largeNum{
+	color: var(--main-green);
+	font-family: "Lucida Console", Monaco, sans; 
+	font-size: 2vh;
+}
+
+.resultNum{
+	color: var(--main-green);
+	font-family: "Lucida Console", Monaco, sans; 
+	font-size: 5vh;
+}
+
+.largeTerm{
+    color: var(--main-green);
+	font-family: "Times New Roman", Times, serif; 
+	font-size: 6vh; 
+	font-weight: bold; 
+	font-style: italic;
+	margin-bottom: 10%;
+}
+
+.finePrint{
+    color: var(--general);
+    text-align: left; 
+    font-family: "Lucida Console", Monaco, sans;
+    font-size: 1.5vh;
+}
+
+.smallText{
+	text-align: center;
+	color: var(--general);
+	font-family: "Lucida Console", Monaco, sans; 
+	font-size: 2vh;
+}
+
+/* Sliders */
+
+.slideContainer{
+    transform: rotate(270deg);
+	text-align: center;
+    margin-top: 30vh;
+    margin-bottom: 10vh;
+}
+
+.slider{
+    align-items: center;
+	-webkit-appearance: none;
+	width: 30vh;
+	height: 1.2vw;
+	border-radius: 1.5vw;
+	background: var(--bg-general);
+	outline: none;
+	opacity: 0.4;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+}
+
+.slider:hover{
+	opacity: 1;
+}
+
+.slider::-moz-range-thumb{
+	width: 3vw;
+	height: 3vw;
+	border-radius: 50%;
+	background: var(--general);
+	cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb{
+	-webkit-appearance: none;
+	width: 3vw;
+	height: 3vw;
+	border-radius: 50%;
+	background: var(--general);
+	cursor: pointer;
+}
+
+.slider::-ms-thumb{
+    width: 3vw;
+	height: 3vw;
+	border-radius: 50%;
+	background: var(--general);
+    cursor: pointer;
+}
+
+/* Containers */
+
+.info{
+	display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 25vh;
+    width: 100%;    
+}
+
+.logos{
+	display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 12vh;
+    width: 100%;    
+}
+
+.links{
+	display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 8vh;
+    width: 100%;    
+}

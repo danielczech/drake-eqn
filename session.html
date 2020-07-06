@@ -1,201 +1,123 @@
 <!-- MIT licence (see licence.txt). D Czech 2019. -->
 
 <!DOCTYPE html>
+
 <html>
-<head>
-  <meta charset = "UTF-8">
-  <meta name = "viewport" content = "width = device-width, initial-scale = 1">
-  <link rel = "stylesheet" href = "styles.css">
-</head>
-<body bgcolor = "black">
-	<h1>Local session data:</h1>
-<div class = "centreButton">
-  <button type = "button" onclick = "javascript:back()" id = "submit">Back to Equation</button> 
-  <button type = "button" onclick = "javascript:result()" id = "submit">Back to Result</button>
-</div>
+  
+  <head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <link rel = "stylesheet" href = "css/styles.css">
+    <script type="text/javascript" src="js/session.js"></script>
+  </head>
 
-<table style="width:90%" align="center">
-  <tr class = "largeNum" align = "center">
-    <td>
-    </td>
-    <td>
-      N
-    </td>
-    <td>
-      R<sub>*</sub>
-    </td>
-    <td>
-      f<sub>p</sub>
-    </td>
-    <td>
-      n<sub>e</sub>
-    </td>
-    <td>
-      f<sub>l</sub>
-    </td>
-    <td>
-     f<sub>i</sub>
-    </td>
-    <td>
-     f<sub>c</sub>
-    </td>
-    <td>
-      L
-    </td>
-  </tr>
+  <body bgcolor = "black" onload = "init()">
 
-  <tr class = "smallText" align = "center">
-    <td align = "right">
-      Median: 
-    </td>
-    <td>
-      <span id = "NMedianIn"></span>
-    </td>
-    <td>
-      <span id = "RstarMedianIn"></span> 
-    </td>
-    <td>
-      <span id = "FpMedianIn"></span>
-    </td>
-    <td>
-      <span id = "NeMedianIn"></span>
-    </td>
-    <td>
-      <span id = "FlMedianIn"></span>
-    </td>
-    <td>
-      <span id = "FiMedianIn"></span>
-    </td>
-    <td>
-      <span id = "FcMedianIn"></span>
-    </td>
-    <td>
-      <span id = "LMedianIn"></span>
-    </td>
-  </tr>
+  	<h1>Local session data:</h1>
+  
+    <div class = "center">
+      <button type = "button" class = "button-main" onclick = "javascript:back()" id = "submit">Back to Equation</button> 
+      <button type = "button" class = "button-main" onclick = "javascript:result()" id = "submit">Back to Result</button>
+    </div>
+    
+    <table class = "session" align="center">
+      <tr class = "largeNum">
+        <td>
+        </td>
+        <td>
+          N
+        </td>
+        <td>
+          R<sub>*</sub>
+        </td>
+        <td>
+          f<sub>p</sub>
+        </td>
+        <td>
+          n<sub>e</sub>
+        </td>
+        <td>
+          f<sub>l</sub>
+        </td>
+        <td>
+         f<sub>i</sub>
+        </td>
+        <td>
+         f<sub>c</sub>
+        </td>
+        <td>
+          L
+        </td>
+      </tr>
 
-  <tr class = "smallText" align = "center">
-    <td align = "right">
-      <span id = "timeValIn"></span>
-    </td>
-    <td>
-      <span id = "NValIn"></span>
-    </td>
-    <td>
-      <span id = "RstarValIn"></span>
-    </td>
-    <td>
-      <span id = "FpValIn"></span>
-    </td>
-    <td>
-      <span id = "NeValIn"></span>
-    </td>
-    <td>
-      <span id = "FlValIn"></span>
-    </td>
-    <td>
-      <span id = "FiValIn"></span>
-    </td>
-    <td>
-      <span id = "FcValIn"></span>
-    </td>
-    <td>
-      <span id = "LValIn"></span>
-    </td>
-  </tr>
-</table>
+      <tr class = "smallText">
+        <td>&nbsp</td>
+      </tr>
 
-<script>
+      <tr class = "smallText">
+        <td>
+          Median: 
+        </td>
+        <td>
+          <span id = "NMedianIn"></span>
+        </td>
+        <td>
+          <span id = "RstarMedianIn"></span> 
+        </td>
+        <td>
+          <span id = "FpMedianIn"></span>
+        </td>
+        <td>
+          <span id = "NeMedianIn"></span>
+        </td>
+        <td>
+          <span id = "FlMedianIn"></span>
+        </td>
+        <td>
+          <span id = "FiMedianIn"></span>
+        </td>
+        <td>
+          <span id = "FcMedianIn"></span>
+        </td>
+        <td>
+          <span id = "LMedianIn"></span>
+        </td>
+      </tr>
+    
+      <tr class = "smallText">
+        <td>&nbsp</td>
+      </tr>
 
-function result(){
-  window.location.href = "result.html";
-}
-
-function back(){
-  window.location.href = "index.html";
-}
-
-function fillTime(){
-	timeVals = JSON.parse(localStorage.getItem("timeSessionVals"));
-	toInsert = timeVals[1] + "<br>";
-	var i;
-	for(i = 2; i < termVals.length; i++){
-	   	toInsert = toInsert + timeVals[i] + "<br>";
-	}
-	termOut = document.getElementById("timeValIn");
-	termOut.innerHTML = toInsert;
-}
-
-function fillMedian(term, termVals){
-    median = getMedian(termVals.slice(1));
-    medianOut = document.getElementById(term + "MedianIn");
-    medianOut.innerHTML = median;
-}
-
-function fillValues(term){
-    termVals = JSON.parse(localStorage.getItem(term + "SessionVals"));
-    if(termVals.length > 1){
-      fillTime();
-      fillMedian(term, termVals);
-      toInsert = termVals[1] + "<br>";
-      var i;
-      for(i = 2; i < termVals.length; i++){
-    	toInsert = toInsert + termVals[i] + "<br>";
-      }
-    termOut = document.getElementById(term + "ValIn");
-    termOut.innerHTML = toInsert;
-  }
-}
-
-function getMedian(termVals){
-	var median;
-	termVals.sort(sortNum);
-	arrLen = termVals.length;
-    if(arrLen % 2 == 0){
-    	median = (termVals[arrLen / 2 - 1] + termVals[arrLen / 2])/2;
-    }
-    else{
-    	median = termVals[(arrLen - 1) / 2]
-    }
-	return median;
-}
-
-function sortNum(x, y){
-  return x - y;
-}
-
-//fillValues("time");
-fillValues("N");
-allTerms = JSON.parse(localStorage.getItem("allTerms"));
-allTerms.forEach(fillValues);
-
-</script>
+      <tr class = "smallText" align = "center">
+        <td align = "right">
+          <span id = "timeValIn"></span>
+        </td>
+        <td>
+          <span id = "NValIn"></span>
+        </td>
+        <td>
+          <span id = "RstarValIn"></span>
+        </td>
+        <td>
+          <span id = "FpValIn"></span>
+        </td>
+        <td>
+          <span id = "NeValIn"></span>
+        </td>
+        <td>
+          <span id = "FlValIn"></span>
+        </td>
+        <td>
+          <span id = "FiValIn"></span>
+        </td>
+        <td>
+          <span id = "FcValIn"></span>
+        </td>
+        <td>
+          <span id = "LValIn"></span>
+        </td>
+      </tr>
+    </table>
+  
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

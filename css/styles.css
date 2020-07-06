@@ -23,12 +23,14 @@ h1{
 	text-align: center; 
 	color: var(--general);
 	margin-bottom: 1vh; 
+  font-size: 4vh;
 }
 
 h2{ 
 	font-family: "Lucida Console", Monaco, sans; 
 	text-align: center; 
 	color: var(--general);
+  font-size: 3vh;
 }
 
 /* Tables */

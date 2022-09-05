@@ -107,7 +107,6 @@ table.session td:nth-child(n+2){
   margin: 0;
 }
 
-
 /* Links */
 
 a:link {
@@ -201,16 +200,16 @@ a:hover {
 
 .slideContainer{
     transform: rotate(270deg);
-	text-align: center;
+	  text-align: center;
     margin-top: 30vh;
     margin-bottom: 10vh;
 }
 
 .slider{
-    align-items: center;
+  align-items: center;
 	-webkit-appearance: none;
 	width: 30vh;
-	height: 1.2vw;
+	height: 1.2em;
 	border-radius: 1.5vw;
 	background: var(--bg-general);
 	outline: none;
@@ -224,8 +223,8 @@ a:hover {
 }
 
 .slider::-moz-range-thumb{
-	width: 3vw;
-	height: 3vw;
+	width: 2.5em;
+	height: 2.5em;
 	border-radius: 50%;
 	background: var(--general);
 	cursor: pointer;
@@ -233,61 +232,61 @@ a:hover {
 
 .slider::-webkit-slider-thumb{
 	-webkit-appearance: none;
-	width: 3vw;
-	height: 3vw;
+	width: 2.5em;
+	height: 2.5em;
 	border-radius: 50%;
 	background: var(--general);
 	cursor: pointer;
 }
 
 .slider::-ms-thumb{
-    width: 3vw;
-	height: 3vw;
+  width: 2.5em;
+	height: 2.5em;
 	border-radius: 50%;
 	background: var(--general);
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* Containers */
 
 .info{
 	display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    bottom: 25vh;
-    width: 100%;    
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 25vh;
+  width: 100%;    
 }
 
 .logos{
 	display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    bottom: 12vh;
-    width: 100%;    
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 12vh;
+  width: 100%;    
 }
 
 .links{
 	display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    bottom: 8vh;
-    width: 100%;    
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 8vh;
+  width: 100%;    
 }

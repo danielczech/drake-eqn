@@ -15,7 +15,9 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-}
+    margin: 0;
+    padding: 0;
+  }
 
 h1{
 	/*font-family: "Helvetica Neue", Helvetica, sans-serif;*/
@@ -164,7 +166,7 @@ a:hover {
 .largeNum{
 	color: var(--main-green);
 	font-family: "Lucida Console", Monaco, sans; 
-	font-size: 2vh;
+	font-size: 2.7vh;
 }
 
 .resultNum{
@@ -193,7 +195,7 @@ a:hover {
 	text-align: center;
 	color: var(--general);
 	font-family: "Lucida Console", Monaco, sans; 
-	font-size: 2vh;
+	font-size: 2.7vh;
 }
 
 /* Sliders */
@@ -209,7 +211,7 @@ a:hover {
   align-items: center;
 	-webkit-appearance: none;
 	width: 30vh;
-	height: 1.2em;
+	height: 1.5em;
 	border-radius: 1.5vw;
 	background: var(--bg-general);
 	outline: none;
@@ -272,9 +274,10 @@ a:hover {
   -webkit-box-align: center;
   align-items: center;
   justify-content: center;
-  position: fixed;
+  /* position: fixed; */
   bottom: 12vh;
   width: 100%;    
+  margin-top: 4vh;
 }
 
 .links{
@@ -286,7 +289,13 @@ a:hover {
   -webkit-box-align: center;
   align-items: center;
   justify-content: center;
-  position: fixed;
+  /* position: fixed; */
   bottom: 8vh;
   width: 100%;    
+}
+
+.dedication{
+  background-color: black;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
 }

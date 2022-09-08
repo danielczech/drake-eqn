@@ -25,7 +25,8 @@ h1{
 	text-align: center; 
 	color: var(--general);
 	margin-bottom: 1vh; 
-  font-size: 5vh;
+  font-size: 2.5em;
+  font-weight: normal;
 }
 
 h2{ 
@@ -33,7 +34,8 @@ h2{
 	/* font-family: "Lucida Console", Monaco, sans;  */
 	text-align: center; 
 	color: var(--general);
-  font-size: 4vh;
+  font-size: 1.5em;
+  font-weight: normal;
 }
 
 /* Tables */

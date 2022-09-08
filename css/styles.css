@@ -61,22 +61,22 @@ table.result td:nth-child(1){
   text-align: center;
   width: 7vw; 
   margin: 0;
-  padding-bottom: 1vw;
+  padding-bottom: 2vw;
 }
 
 table.result td:nth-child(2){
   text-align: center;
   width: 8vw; 
   margin: 0;
-  padding-bottom: 1vw;
-  font-size: 2vw;
+  padding-bottom: 2vw;
+  /* font-size: 2vw; */
 }
 
 table.result td:nth-child(3){
   text-align: left;
   width: 70vw; 
   margin: 0;
-  padding-bottom: 1vw;
+  padding-bottom: 2vw;
 }
 
 table.footer{
@@ -175,7 +175,7 @@ a:hover {
 	color: var(--main-green);
 	/* font-family: "Lucida Console", Monaco, sans;  */
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 5vh;
+	font-size: 6vh;
 }
 
 .largeTerm{
@@ -192,7 +192,7 @@ a:hover {
   text-align: left; 
   /* font-family: "Lucida Console", Monaco, sans; */
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 1.5vh;
+  font-size: 0.8vw;
 }
 
 .smallText{

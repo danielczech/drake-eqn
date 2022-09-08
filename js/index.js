@@ -155,8 +155,8 @@ function hoverInfo(term){
   termDisplay = document.getElementById(term + "Info");
   termElement.addEventListener("mouseover", disp('visible', termDisplay));
   termElement.addEventListener("mouseout", disp('hidden', termDisplay));
-  termElement.addEventListener("mousedown", disp('visible', termDisplay));
-  termElement.addEventListener("mouseup", disp('hidden', termDisplay));
+  termElement.addEventListener("pointerdown", disp('visible', termDisplay));
+  termElement.addEventListener("pointerup", disp('hidden', termDisplay));
 }
 
 function sessionStats(){

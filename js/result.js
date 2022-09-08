@@ -26,7 +26,7 @@ function setFontColour(str, color) {
 }
 
 function checkLikelihood(userVal, min, max){
-  var output = setFontColor("within the region of", "#6BCAFA"); //#6AD1E3
+  var output = setFontColour("within the region of", "#6BCAFA"); //#6AD1E3
   if(userVal < min){
     output = setFontColour("less than", "#F76248"); //#F44934
   }

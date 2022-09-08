@@ -145,7 +145,7 @@ function getNow(){
 function disp(action, element){
   // Return a function for closure
   return function(){
-    element.style.display = action;
+    element.style.visibility = action;
   }
 }
 
@@ -153,8 +153,8 @@ function hoverInfo(term){
   // Add listeners to each term/slider element
   termElement = document.getElementById(term);
   termDisplay = document.getElementById(term + "Info");
-  termElement.addEventListener("mouseover", disp('block', termDisplay));
-  termElement.addEventListener("mouseout", disp('none', termDisplay));
+  termElement.addEventListener("mouseover", disp('visible', termDisplay));
+  termElement.addEventListener("mouseout", disp('hidden', termDisplay));
 }
 
 function sessionStats(){

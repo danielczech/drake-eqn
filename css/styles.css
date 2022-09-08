@@ -131,7 +131,8 @@ a:hover {
 
 .button-main{
  	background-color: Transparent;
-	font-family: "Lucida Console", Monaco, sans;
+	/* font-family: "Lucida Console", Monaco, sans; */
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
 	margin-bottom: 1vh;
 	margin-left: 1vh;
 	margin-right: 1vh;
@@ -140,7 +141,7 @@ a:hover {
 	-webkit-border-radius: 2vh;
 	border-radius: 2vh;
 	color: var(--general);
-	font-size: 2vh;
+	font-size: 0.7em;
 	text-decoration: none;
 	border-color: var(--general);
 	border-style: solid;
@@ -168,20 +169,20 @@ a:hover {
 	color: var(--main-green);
 	/* font-family: "Lucida Console", Monaco, sans;  */
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 2.7vh;
+	font-size: 1.3em;
 }
 
 .resultNum{
 	color: var(--main-green);
 	/* font-family: "Lucida Console", Monaco, sans;  */
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 6vh;
+	font-size: 1.3em;
 }
 
 .largeTerm{
   color: var(--main-green);
 	font-family: "Times New Roman", Times, serif; 
-	font-size: 6vh; 
+	font-size: 1.7em; 
 	font-weight: bold; 
 	font-style: italic;
 	margin-bottom: 10%;
@@ -192,7 +193,7 @@ a:hover {
   text-align: left; 
   /* font-family: "Lucida Console", Monaco, sans; */
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 0.8vw;
+  font-size: 0.5em;
 }
 
 .smallText{
@@ -200,7 +201,7 @@ a:hover {
 	color: var(--general);
 	/* font-family: "Lucida Console", Monaco, sans;  */
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 4vh;
+	font-size: 1.5em;
 }
 
 /* Sliders */

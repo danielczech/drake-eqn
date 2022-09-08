@@ -20,19 +20,20 @@ body {
   }
 
 h1{
-	/*font-family: "Helvetica Neue", Helvetica, sans-serif;*/
-	font-family: "Lucida Console", Monaco, sans; 
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	/* font-family: "Lucida Console", Monaco, sans;  */
 	text-align: center; 
 	color: var(--general);
 	margin-bottom: 1vh; 
-  font-size: 4vh;
+  font-size: 5vh;
 }
 
 h2{ 
-	font-family: "Lucida Console", Monaco, sans; 
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	/* font-family: "Lucida Console", Monaco, sans;  */
 	text-align: center; 
 	color: var(--general);
-  font-size: 3vh;
+  font-size: 4vh;
 }
 
 /* Tables */
@@ -165,18 +166,20 @@ a:hover {
 
 .largeNum{
 	color: var(--main-green);
-	font-family: "Lucida Console", Monaco, sans; 
+	/* font-family: "Lucida Console", Monaco, sans;  */
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
 	font-size: 2.7vh;
 }
 
 .resultNum{
 	color: var(--main-green);
-	font-family: "Lucida Console", Monaco, sans; 
+	/* font-family: "Lucida Console", Monaco, sans;  */
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
 	font-size: 5vh;
 }
 
 .largeTerm{
-    color: var(--main-green);
+  color: var(--main-green);
 	font-family: "Times New Roman", Times, serif; 
 	font-size: 6vh; 
 	font-weight: bold; 
@@ -185,17 +188,19 @@ a:hover {
 }
 
 .finePrint{
-    color: var(--general);
-    text-align: left; 
-    font-family: "Lucida Console", Monaco, sans;
-    font-size: 1.5vh;
+  color: var(--general);
+  text-align: left; 
+  /* font-family: "Lucida Console", Monaco, sans; */
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1.5vh;
 }
 
 .smallText{
 	text-align: center;
 	color: var(--general);
-	font-family: "Lucida Console", Monaco, sans; 
-	font-size: 2.7vh;
+	/* font-family: "Lucida Console", Monaco, sans;  */
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 4vh;
 }
 
 /* Sliders */
@@ -260,9 +265,10 @@ a:hover {
   -webkit-box-align: center;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  bottom: 25vh;
-  width: 100%;    
+  /* position: fixed; */
+  /* bottom: 25vh; */
+  width: 100%;  
+  padding-bottom: 2em;  
 }
 
 .logos{
@@ -277,7 +283,7 @@ a:hover {
   /* position: fixed; */
   bottom: 12vh;
   width: 100%;    
-  margin-top: 4vh;
+  margin-top: 8vh;
 }
 
 .links{
@@ -298,4 +304,9 @@ a:hover {
   background-color: black;
   padding-top: 3vh;
   padding-bottom: 3vh;
+}
+
+.description{
+  position: absolute;
+  visibility: hidden;
 }

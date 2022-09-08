@@ -21,13 +21,17 @@ function showLikelihood(term, minVal, maxVal){
   termLikelihood.innerHTML = checkLikelihood(Number(termVal), minVal, maxVal);
 }
 
+function setFontColour(str, color) {
+    return '<span style="color: ' + color + '">' + str + '</span>';
+}
+
 function checkLikelihood(userVal, min, max){
-  var output = "within the region of".fontcolor("#6BCAFA"); //#6AD1E3
+  var output = setFontColor("within the region of", "#6BCAFA"); //#6AD1E3
   if(userVal < min){
-    output = "less than".fontcolor("#F76248"); //#F44934
+    output = setFontColour("less than", "#F76248"); //#F44934
   }
   else if(userVal > max){
-    output = "greater than".fontcolor("#A3E879"); //#4AF02B
+    output = setFontColour("greater than", "#A3E879"); //#4AF02B
   } 
   return output;
 }

@@ -1,0 +1,1 @@
+![The Drake Equation](img/drake_qr.png "The Drake Equation")
